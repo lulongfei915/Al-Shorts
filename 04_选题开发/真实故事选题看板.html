@@ -1,0 +1,719 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AI短片真实故事选题看板 · 基于《一份怜爱》爆款公式</title>
+<link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Serif+SC:wght@400;600;700;900&family=Noto+Sans+SC:wght@300;400;500;700&display=swap">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23161b23'/%3E%3Ctext x='16' y='23' font-size='20' text-anchor='middle' fill='%23C54833' font-family='serif' font-weight='bold'%3E片%3C/text%3E%3C/svg%3E">
+<script src="https://cdn.jsdelivr.net/npm/echarts@5.5.1/dist/echarts.min.js"></script>
+<style>
+:root{
+  --paper:#ECE5D6;
+  --paper-2:#E3DBC8;
+  --ink:#23272E;
+  --ink-soft:#4A4E55;
+  --cinnabar:#C54833;
+  --gold:#A98544;
+  --sage:#6B7B6E;
+  --slate:#5D6B78;
+  --night:#161B23;
+  --line:rgba(35,39,46,.18);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  background:var(--paper);
+  color:var(--ink);
+  font-family:"Noto Sans SC","PingFang SC","Microsoft YaHei",sans-serif;
+  line-height:1.75;
+  -webkit-font-smoothing:antialiased;
+}
+.wrap{max-width:1120px;margin:0 auto;padding:0 28px;}
+.serif{font-family:"Noto Serif SC","Songti SC",serif;}
+
+/* ===== Hero ===== */
+.hero{
+  background:var(--night);
+  color:#EDE6D6;
+  padding:88px 0 76px;
+  position:relative;
+  overflow:hidden;
+  border-bottom:4px solid var(--cinnabar);
+}
+.hero::after{
+  content:"片";
+  position:absolute;right:-30px;bottom:-90px;
+  font-family:"Noto Serif SC",serif;font-weight:900;
+  font-size:340px;color:rgba(255,255,255,.035);
+  line-height:1;
+}
+.hero .kicker{
+  font-size:13px;letter-spacing:.32em;color:var(--gold);
+  margin-bottom:26px;font-weight:500;
+}
+.hero h1{
+  font-family:"Noto Serif SC",serif;font-weight:900;
+  font-size:clamp(32px,5.2vw,56px);line-height:1.25;
+  margin-bottom:22px;
+}
+.hero h1 em{font-style:normal;color:var(--cinnabar);}
+.hero p.lead{
+  max-width:680px;color:#B9B2A2;font-size:16px;font-weight:300;
+}
+.hero-stats{
+  display:flex;gap:56px;margin-top:52px;flex-wrap:wrap;
+}
+.hero-stat .num{
+  font-family:"Noto Serif SC",serif;font-weight:700;
+  font-size:40px;color:#EDE6D6;line-height:1;
+}
+.hero-stat .num span{color:var(--cinnabar);}
+.hero-stat .lab{font-size:13px;color:#8E8778;margin-top:10px;letter-spacing:.08em;}
+
+/* ===== Section frame ===== */
+section{padding:76px 0 12px;}
+.sec-head{display:flex;align-items:baseline;gap:18px;margin-bottom:44px;}
+.sec-no{
+  font-family:"Noto Serif SC",serif;font-weight:900;
+  font-size:15px;color:var(--cinnabar);
+  border:1.5px solid var(--cinnabar);border-radius:50%;
+  width:38px;height:38px;display:inline-flex;
+  align-items:center;justify-content:center;flex:none;
+}
+.sec-head h2{
+  font-family:"Noto Serif SC",serif;font-weight:700;font-size:28px;
+}
+.sec-head .sub{color:var(--ink-soft);font-size:14px;margin-left:auto;text-align:right;}
+
+/* ===== Formula ===== */
+.formula-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;}
+.formula-card{
+  background:var(--paper-2);border:1px solid var(--line);
+  padding:34px 32px;position:relative;
+}
+.formula-card h3{
+  font-family:"Noto Serif SC",serif;font-size:19px;margin-bottom:22px;
+}
+.formula-eq{
+  font-family:"Noto Serif SC",serif;font-size:17px;line-height:2.5;
+  color:var(--ink);
+}
+.formula-eq b{color:var(--cinnabar);font-weight:700;}
+.formula-eq .plus{color:var(--gold);margin:0 6px;font-weight:400;}
+.formula-note{
+  margin-top:20px;padding-top:18px;border-top:1px dashed var(--line);
+  font-size:13.5px;color:var(--ink-soft);
+}
+.act-list{list-style:none;}
+.act-list li{
+  display:grid;grid-template-columns:76px 1fr;gap:16px;
+  padding:14px 0;border-bottom:1px solid var(--line);
+  align-items:baseline;
+}
+.act-list li:last-child{border-bottom:none;}
+.act-time{
+  font-family:"Noto Serif SC",serif;color:var(--cinnabar);
+  font-size:13px;font-weight:600;
+}
+.act-name{font-weight:600;font-size:15px;}
+.act-desc{font-size:13px;color:var(--ink-soft);margin-top:2px;}
+
+/* ===== Charts ===== */
+.chart-box{background:var(--paper-2);border:1px solid var(--line);padding:24px 18px 10px;}
+#rankChart{width:100%;height:760px;}
+#radarChart{width:100%;height:480px;}
+.chart-caption{font-size:13px;color:var(--ink-soft);padding:6px 10px 14px;}
+.radar-wrap{max-width:860px;margin:0 auto;}
+
+/* ===== Story cards ===== */
+.story{
+  background:var(--paper-2);border:1px solid var(--line);
+  margin-bottom:44px;display:grid;grid-template-columns:300px 1fr;
+}
+.story-aside{
+  background:var(--night);color:#EDE6D6;padding:36px 30px;
+  display:flex;flex-direction:column;
+}
+.story-rank{
+  font-family:"Noto Serif SC",serif;color:var(--gold);
+  font-size:13px;letter-spacing:.2em;margin-bottom:18px;
+}
+.story-title{
+  font-family:"Noto Serif SC",serif;font-weight:900;
+  font-size:30px;line-height:1.35;margin-bottom:8px;
+}
+.story-person{font-size:13.5px;color:#A9A192;margin-bottom:26px;}
+.story-nums{margin-top:auto;}
+.story-num-row{
+  display:flex;justify-content:space-between;align-items:baseline;
+  padding:11px 0;border-top:1px solid rgba(255,255,255,.12);
+}
+.story-num-row .v{
+  font-family:"Noto Serif SC",serif;font-weight:700;
+  color:var(--cinnabar);font-size:19px;
+}
+.story-num-row .k{font-size:12.5px;color:#9C9586;}
+.story-body{padding:34px 36px;}
+.story-block{margin-bottom:22px;}
+.story-block:last-child{margin-bottom:0;}
+.story-block h4{
+  font-size:13px;letter-spacing:.14em;color:var(--cinnabar);
+  font-weight:700;margin-bottom:8px;
+  display:flex;align-items:center;gap:9px;
+}
+.story-block h4::before{
+  content:"";width:14px;height:2px;background:var(--cinnabar);
+}
+.story-block p,.story-block li{font-size:14.5px;color:var(--ink);}
+.story-block ul{list-style:none;}
+.story-block ul li{padding-left:16px;position:relative;margin-bottom:5px;}
+.story-block ul li::before{
+  content:"";position:absolute;left:0;top:11px;
+  width:6px;height:6px;background:var(--gold);border-radius:50%;
+}
+.story-block .quote{
+  font-family:"Noto Serif SC",serif;font-size:15.5px;
+  color:var(--ink);padding:10px 0 2px;
+}
+.src-links a{
+  color:var(--slate);font-size:12.5px;text-decoration:none;
+  border-bottom:1px solid rgba(93,107,120,.4);
+  margin-right:14px;display:inline-block;margin-bottom:6px;
+}
+.src-links a:hover{color:var(--cinnabar);border-color:var(--cinnabar);}
+
+/* ===== Tables ===== */
+.tier-table{width:100%;border-collapse:collapse;font-size:14px;}
+.tier-table{table-layout:fixed;}
+.tier-table th{
+  background:var(--night);color:#EDE6D6;
+  font-weight:500;font-size:13px;padding:12px 14px;text-align:left;
+}
+.tier-table td{
+  padding:13px 14px;border-bottom:1px solid var(--line);
+  vertical-align:top;
+}
+.tier-table tr:nth-child(even) td{background:rgba(169,133,68,.06);}
+.tier-table .t-name{font-family:"Noto Serif SC",serif;font-weight:700;}
+.tier-table .t-score{font-family:"Noto Serif SC",serif;color:var(--cinnabar);font-weight:700;}
+.tag{
+  display:inline-block;font-size:11.5px;padding:2px 9px;
+  border:1px solid var(--gold);color:var(--gold);margin-right:5px;
+  margin-bottom:3px;white-space:nowrap;
+}
+.mini-list li{
+  padding:12px 0;border-bottom:1px solid var(--line);
+  font-size:14px;list-style:none;
+  display:grid;grid-template-columns:150px 1fr;gap:18px;
+}
+.mini-list li:last-child{border-bottom:none;}
+.mini-list .m-name{font-family:"Noto Serif SC",serif;font-weight:700;font-size:14.5px;}
+.no-pick .m-name{color:var(--ink-soft);}
+
+/* ===== Pitfalls ===== */
+.pit-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;}
+.pit-card{
+  background:var(--paper-2);border:1px solid var(--line);
+  border-left:4px solid var(--cinnabar);padding:24px 26px;
+}
+.pit-card h4{
+  font-family:"Noto Serif SC",serif;font-size:16.5px;margin-bottom:10px;
+}
+.pit-card p{font-size:13.8px;color:var(--ink-soft);}
+.pit-card b{color:var(--cinnabar);font-weight:600;}
+
+/* ===== Closing ===== */
+.closing{
+  background:var(--night);color:#EDE6D6;
+  padding:90px 0;margin-top:88px;text-align:center;
+  border-top:4px solid var(--cinnabar);
+}
+.closing .big{
+  font-family:"Noto Serif SC",serif;font-weight:900;
+  font-size:clamp(22px,3.4vw,34px);line-height:1.7;max-width:820px;margin:0 auto;
+}
+.closing .big em{font-style:normal;color:var(--cinnabar);}
+.closing .seal{
+  margin-top:40px;font-family:"Noto Serif SC",serif;
+  color:var(--gold);font-size:13px;letter-spacing:.24em;
+}
+footer{padding:26px 0;font-size:12.5px;color:var(--ink-soft);text-align:center;}
+
+/* ===== Responsive ===== */
+@media (max-width:900px){
+  .formula-grid,.story,.pit-grid{grid-template-columns:1fr;}
+  .story-aside{padding:28px 26px;}
+  .hero-stats{gap:34px;}
+  .sec-head{flex-wrap:wrap;}
+  .sec-head .sub{margin-left:0;text-align:left;}
+  #rankChart{height:920px;}
+  .mini-list li{grid-template-columns:1fr;gap:4px;}
+  .tier-table{font-size:12.5px;}
+  .tier-table th:nth-child(4),.tier-table td:nth-child(4){display:none;}
+}
+</style>
+</head>
+<body>
+
+<!-- ===== Hero ===== -->
+<header class="hero">
+  <div class="wrap">
+    <div class="kicker">AI 剧情短片 · 选题开发档案</div>
+    <h1>真实故事选题看板<br>复刻<em>《一份怜爱》</em>爆款公式</h1>
+    <p class="lead">参考片《一份怜爱，她坚持了二十年》（抖音 @旧梦留声机）获 1842 万赞、216 万转发。本看板基于其拉片笔记提炼爆款公式，从全网真实人物中检索、核实 21 个候选故事，按 8 个维度评分，给出可直接开发的题材与依据。</p>
+    <div class="hero-stats">
+      <div class="hero-stat"><div class="num">21</div><div class="lab">核实候选故事</div></div>
+      <div class="hero-stat"><div class="num">8</div><div class="lab">评分维度</div></div>
+      <div class="hero-stat"><div class="num"><span>4</span></div><div class="lab">第一梯队首推</div></div>
+      <div class="hero-stat"><div class="num">1842<span>万</span></div><div class="lab">参考片点赞量</div></div>
+    </div>
+  </div>
+</header>
+
+<!-- ===== 01 爆款公式 ===== -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-no">壹</span>
+      <h2>先拆公式，再找故事</h2>
+      <span class="sub">依据：拉片笔记_一份怜爱.md</span>
+    </div>
+    <div class="formula-grid">
+      <div class="formula-card">
+        <h3>选题公式（四个要件缺一不可）</h3>
+        <div class="formula-eq">
+          <b>真实小人物</b><span class="plus">＋</span><b>一个重复了几十年的动作</b><br>
+          <span class="plus">＋</span><b>一个反常识数字</b><span class="plus">＋</span><b>一次重返 / 重逢</b>
+        </div>
+        <div class="formula-note">
+          参考片实例：摆摊老人毛师花 ＋「递包子」动作重复 27 年 ＋ 每份 5 毛从不涨价 ＋ 受助女孩带娃重返报恩。结尾 15–20 秒真人真事素材是「信任锚点」，毛笔字落版人物称号是「传播符号」。
+        </div>
+      </div>
+      <div class="formula-card">
+        <h3>五幕结构与情绪节奏</h3>
+        <ul class="act-list">
+          <li><span class="act-time">0–15s</span><div><div class="act-name">现实钩子</div><div class="act-desc">特写快切＋一镜到底＋记忆碎片对白，抛 3 个悬念，不讲清故事</div></div></li>
+          <li><span class="act-time">15–70s</span><div><div class="act-name">年代闪回</div><div class="act-desc">弱者困境→出手相助（旁人质疑反衬）→善意细节递进</div></div></li>
+          <li><span class="act-time">70–98s</span><div><div class="act-name">时间蒙太奇</div><div class="act-desc">年份快切，把一次善拉伸成一生守；含一次假高潮</div></div></li>
+          <li><span class="act-time">98–115s</span><div><div class="act-name">重逢对话</div><div class="act-desc">归来者三连问＋主角三句朴素回答，金句在此</div></div></li>
+          <li><span class="act-time">115–138s</span><div><div class="act-name">真实佐证</div><div class="act-desc">真人新闻影像＋新闻字幕＋歌词即剧情的 OST，总爆发</div></div></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 02 评分总榜 ===== -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-no">贰</span>
+      <h2>21 个候选故事评分总榜</h2>
+      <span class="sub">8 维度各 10 分 · 满分 80</span>
+    </div>
+    <div class="chart-box">
+      <div id="rankChart"></div>
+      <div class="chart-caption">口径：评分为基于权威媒体公开事实的主观评估；维度＝视觉符号 / 反常识数字 / 时间跨度 / 重逢闭环 / 真实素材 / 国民认知 / 差异化 / AI 可行性。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 03 首推雷达 ===== -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-no">叁</span>
+      <h2>第一梯队四题，强在哪</h2>
+      <span class="sub">6 个核心维度对比</span>
+    </div>
+    <div class="chart-box radar-wrap">
+      <div id="radarChart"></div>
+      <div class="chart-caption">四题各有打法：抗癌厨房胜在素材厚度，莫振高胜在重逢烈度，万其珍胜在时间与诗意，唐才英胜在闭环独特。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 04 首推故事卡片 ===== -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-no">肆</span>
+      <h2>首推故事档案 · 含改编设计与依据</h2>
+    </div>
+
+    <!-- 故事 1：抗癌厨房 -->
+    <div class="story">
+      <aside class="story-aside">
+        <div class="story-rank">首推 01 · 总分 67</div>
+        <div class="story-title">抗癌厨房</div>
+        <div class="story-person">万佐成、熊庚香夫妇<br>江西南昌 · 江西省肿瘤医院旁小巷</div>
+        <div class="story-nums">
+          <div class="story-num-row"><span class="k">坚持年限</span><span class="v">18 年+</span></div>
+          <div class="story-num-row"><span class="k">炒菜价格</span><span class="v">5 角→1 元</span></div>
+          <div class="story-num-row"><span class="k">每年家属</span><span class="v">上万人</span></div>
+          <div class="story-num-row"><span class="k">荣誉</span><span class="v">感动中国</span></div>
+        </div>
+      </aside>
+      <div class="story-body">
+        <div class="story-block">
+          <h4>真实故事</h4>
+          <p>2003 年，在肿瘤医院旁炸油条的万佐成夫妇，把炉火借给患者家属，让他们给病床上的亲人做一口家里的味道。家属过意不去要付钱，夫妇便象征性收 5 角维持水煤，后涨至 1 元；厨房 20 多口锅，春节不打烊，两人为留守厨房放弃了去北京领感动中国奖。墙上写满患者家属留下的电话号码。</p>
+        </div>
+        <div class="story-block">
+          <h4>钩子设计（0–15s）</h4>
+          <p>第一帧：铁锅里一勺热油腾起火苗的特写快切；台词「炒个菜，还要排队？」一镜到底穿过窄巷，两侧二十几个炉灶同时开火、蒸汽弥漫；记忆碎片对白：「我儿子就想吃一口我做的饭」「医生说……他没几天了」。</p>
+        </div>
+        <div class="story-block">
+          <h4>环形闭环</h4>
+          <p>重复动作＝<b>「递锅铲、递炉火」</b>。开头康复多年的她回到巷口，老人递来一把锅铲；闪回 2003 年，同一双手把锅铲递给绝望无措的她；结尾她系上围裙，把锅铲递给新来的家属——善意在陌生人之间接力。</p>
+        </div>
+        <div class="story-block">
+          <h4>重逢与总爆发</h4>
+          <p>康复患者多年后重回小巷拥抱夫妇；镜头扫过墙上密密麻麻的电话，一个个号码被拨通：「妈，我今年体检，没事了」。随后白闪切入历年真实新闻影像，落版毛笔字「抗癌厨房」。</p>
+        </div>
+        <div class="story-block">
+          <h4>依据</h4>
+          <div class="src-links">
+            <a href="https://www.xinhuanet.com/politics/2021-02/22/c_1127122713.htm">新华网·感动中国年度人物</a>
+            <a href="http://www.news.cn/2021-11/10/c_1128051922.htm">新华网·抗癌厨房冬日阳光</a>
+            <a href="https://jx.chinadaily.com.cn/a/2021/02/18/WS602dbb5fa3101e7ce973fd85.html">中国日报·爱心厨房18年</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 故事 2：莫振高 -->
+    <div class="story">
+      <aside class="story-aside">
+        <div class="story-rank">首推 02 · 总分 67</div>
+        <div class="story-title">校长爸爸</div>
+        <div class="story-person">莫振高（1957–2015）<br>广西都安瑶族自治县高级中学</div>
+        <div class="story-nums">
+          <div class="story-num-row"><span class="k">从教</span><span class="v">30 多年</span></div>
+          <div class="story-num-row"><span class="k">个人资助</span><span class="v">近 300 人</span></div>
+          <div class="story-num-row"><span class="k">募集善款</span><span class="v">3000 多万</span></div>
+          <div class="story-num-row"><span class="k">圆大学梦</span><span class="v">1.8 万人</span></div>
+        </div>
+      </aside>
+      <div class="story-body">
+        <div class="story-block">
+          <h4>真实故事</h4>
+          <p>国家级贫困县都安的高中校长莫振高，用 30 多年微薄工资资助近 300 名贫困生上大学；近 10 年利用假期四处「化缘」，募集 3000 多万元，帮 1.8 万贫困生圆大学梦，被唤作「校长爸爸」。2015 年 3 月 9 日因心脏病突发离世，当晚 4600 多名学生自发熄灯默哀；出殡时数千人从全国各地赶回、冒雨送葬，县城花圈一天售罄，清华、哈佛等高校发函吊唁。</p>
+        </div>
+        <div class="story-block">
+          <h4>钩子设计（0–15s）</h4>
+          <p>结果前置：大学校园里一个年轻人接起电话，脸色骤变、当场跪倒；快切雨夜送葬的真实画面（花圈、挽联、人群），台词「都安的娃娃们，校长爸爸走了」；再以白闪拉入多年前的开学日。</p>
+        </div>
+        <div class="story-block">
+          <h4>环形闭环</h4>
+          <p>重复动作＝<b>「往学生手里塞学费」</b>。闪回里他把皱巴巴的钱塞进寒门学生手心：「拿去报名，莫告诉别人」；多年后，毕业工作的学生赶回灵前，把一沓沓钱和名单放在他桌上——名单上是继续受助的孩子。</p>
+        </div>
+        <div class="story-block">
+          <h4>重逢与总爆发</h4>
+          <p>学生从北京、上海、深圳连夜赶回，戴孝守灵；真实素材中千人冒雨送葬的画面即是全片总爆发。落版毛笔字「校长爸爸」。</p>
+        </div>
+        <div class="story-block">
+          <h4>依据</h4>
+          <div class="src-links">
+            <a href="http://politics.people.com.cn/n/2015/0316/c70731-26696443.html">人民网·瑶山泪别校长爸爸</a>
+            <a href="https://www.xinhuanet.com/zgjx/2016-08/30/c_135645297_2.htm">新华网·追忆莫振高</a>
+            <a href="http://edu.cnr.cn/sy/sytjB/20150328/t20150328_518154922.shtml">央广网·追记校长爸爸</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 故事 3：万其珍 -->
+    <div class="story">
+      <aside class="story-aside">
+        <div class="story-rank">首推 03 · 总分 66</div>
+        <div class="story-title">百年义渡</div>
+        <div class="story-person">万其珍及万家四代<br>湖北恩施建始县三里乡大沙河</div>
+        <div class="story-nums">
+          <div class="story-num-row"><span class="k">家族义渡</span><span class="v">140 多年</span></div>
+          <div class="story-num-row"><span class="k">船费</span><span class="v">分文不收</span></div>
+          <div class="story-num-row"><span class="k">高峰日渡</span><span class="v">近 200 人</span></div>
+          <div class="story-num-row"><span class="k">荣誉</span><span class="v">全国道德模范</span></div>
+        </div>
+      </aside>
+      <div class="story-body">
+        <div class="story-block">
+          <h4>真实故事</h4>
+          <p>1877 年前后，万其珍的爷爷万作柱受乡亲恩惠，造船报恩，承诺世代免费渡乡亲过河，临终留下「船一天不停，钱一文不收」。此后万作柱渡了 34 年，其子、其叔相继接力；1995 年，52 岁的万其珍应下叔叔临终嘱托成为第三代艄公，风雨无阻；2016 年儿子万芳权接过船桨，为第四代。央视《焦点访谈》曾专题报道。</p>
+        </div>
+        <div class="story-block">
+          <h4>钩子设计（0–15s）</h4>
+          <p>晨雾弥漫的渡口，一只木船静静靠岸，竹篙入水，画外音「坐船——不要钱」；一镜到底跟拍艄公扶人上船，记忆碎片对白：「我爸说，他小时候就是坐这船去考的学」「万家人，图啥啊」。</p>
+        </div>
+        <div class="story-block">
+          <h4>环形闭环</h4>
+          <p>重复动作＝<b>「握住同一根竹篙、扶人上船」</b>。四代人布满老茧的手在同一根竹篙上完成交接（特写）；开头返乡的中年人抱孩子上船，结尾他的孩子被第四代艄公扶上船——被渡过的人，又送下一代过河。</p>
+        </div>
+        <div class="story-block">
+          <h4>重逢与总爆发</h4>
+          <p>当年被免费渡过河上学、走出大山的孩子，带着子女回到渡口，朝艄公深深鞠躬；白闪切入《焦点访谈》等真实影像与四代人照片，落版毛笔字「百年义渡」。</p>
+        </div>
+        <div class="story-block">
+          <h4>依据</h4>
+          <div class="src-links">
+            <a href="http://www.12371.cn/2019/08/05/VIDE1564962000509123.shtml">央视焦点访谈·百年义渡</a>
+            <a href="http://www.people.com.cn/24hour/n/2013/0822/c25408-22663078.html">人民网·百年义渡记万其珍</a>
+            <a href="http://m.cnhubei.com/content/2019-03/08/content_10379635.html">荆楚网·四代人摆渡百余年</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 故事 4：唐才英 -->
+    <div class="story">
+      <aside class="story-aside">
+        <div class="story-rank">首推 04 · 总分 66</div>
+        <div class="story-title">爱心妈妈</div>
+        <div class="story-person">唐才英（1936 年生）<br>江西新余分宜县人民医院退休职工</div>
+        <div class="story-nums">
+          <div class="story-num-row"><span class="k">累计救助弃婴</span><span class="v">38 名</span></div>
+          <div class="story-num-row"><span class="k">亲手养大</span><span class="v">6 名</span></div>
+          <div class="story-num-row"><span class="k">时间跨度</span><span class="v">40 余年</span></div>
+          <div class="story-num-row"><span class="k">传播事件</span><span class="v">61 岁婚纱照</span></div>
+        </div>
+      </aside>
+      <div class="story-body">
+        <div class="story-block">
+          <h4>真实故事</h4>
+          <p>1982 年，唐才英从路边抱回第一个弃婴，此后 15 年间累计救助 38 名弃婴，多数转送民政或爱心家庭，体质最弱、无人敢领的 6 个孩子她亲手养大，靠退休工资、卖菜、拾废品将他们培养成才。2023 年，从小跟着外孙喊她「外婆」、长大后成为消防员的张佳港，为弥补她一生未穿婚纱的遗憾，陪 87 岁的她拍下一组「相差 61 岁的婚纱照」，经央视报道后全网刷屏。</p>
+        </div>
+        <div class="story-block">
+          <h4>钩子设计（0–15s）</h4>
+          <p>婚纱店内，洁白婚纱被轻轻展开，一只布满老茧与裂口的手抚过裙面；台词「外婆，今天，你最美」；记忆碎片对白：「外婆，我是从哪里来的？」「你呀，是外婆捡来的宝贝」。</p>
+        </div>
+        <div class="story-block">
+          <h4>环形闭环</h4>
+          <p>重复动作＝<b>「抱」</b>。1982 年她在寒风里弯腰抱起襁褓中的婴儿（手部与襁褓特写）；2023 年，长大成人的孩子弯下腰，把瘦小的她轻轻抱起、为她披上婚纱——当年被抱起的人，回来抱她。</p>
+        </div>
+        <div class="story-block">
+          <h4>重逢与总爆发</h4>
+          <p>养大的 6 个孩子带着家人齐聚，喊她「妈妈 / 外婆」；被领养到外地的孩子也回来寻亲；白闪切入婚纱照真实报道与采访影像，落版毛笔字「爱心妈妈」。</p>
+        </div>
+        <div class="story-block">
+          <h4>依据</h4>
+          <div class="src-links">
+            <a href="https://content-static.cctvnews.cctv.com/snow-book/index.html?item_id=13773165744438534504&toc_style_id=feeds_default&share_to=wechat&track_id=e344bf64-80fa-4f58-b978-2361b37a01d8">央视新闻·相差61岁婚纱照</a>
+            <a href="http://t.m.youth.cn/transfer/index/url/gy.youth.cn/gywz/202302/t20230216_14324044.htm">中国青年网·记道德模范唐才英</a>
+            <a href="https://politics.gmw.cn/2024-12/16/content_37741340.htm">光明网·让38个孩子活下去</a>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- ===== 05 第二梯队 ===== -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-no">伍</span>
+      <h2>第二梯队 · 安全牌与特色牌</h2>
+    </div>
+    <table class="tier-table">
+      <colgroup><col style="width:16%"><col style="width:9%"><col style="width:42%"><col style="width:33%"></colgroup>
+      <thead><tr><th>人物 / 称号</th><th>评分</th><th>核心事实</th><th>定位与短板</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="t-name">白方礼<br>蹬三轮支教</td>
+          <td class="t-score">65</td>
+          <td>74 岁起蹬三轮近 20 年，捐 35 万、资助近 300 名学生；按每公里 5 角算相当于绕赤道 18 圈，身后无一分积蓄</td>
+          <td><span class="tag">国民度最高</span><span class="tag">安全牌</span>被讲述次数最多，且与参考片「老人＋辛苦钱助学」观感最近，难出新</td>
+        </tr>
+        <tr>
+          <td class="t-name">叶中央<br>灯塔世家</td>
+          <td class="t-score">65</td>
+          <td>叶家五代守塔超百年（始于 1883 年），叶中央 5 岁丧父、27 年后妻女被浪卷走，守塔 41 年；电影《灯塔世家》原型</td>
+          <td><span class="tag">审美上限最高</span><span class="tag">电影感</span>海浪、船只的 AI 生成难度大，需靠夜景光束与剪影掩盖</td>
+        </tr>
+        <tr>
+          <td class="t-name">叶连平<br>乡村烛光</td>
+          <td class="t-score">63</td>
+          <td>98 岁在世，2000 年创办「留守未成年人之家」免费补英语 25 年，惠及 2000 多名学生；被照亮的孩子回来当了老师</td>
+          <td><span class="tag">老人在世</span><span class="tag">2026新素材</span>传承闭环真实且持续更新；题材仍属助学大类</td>
+        </tr>
+        <tr>
+          <td class="t-name">阿里木<br>烤串助学</td>
+          <td class="t-score">63</td>
+          <td>维吾尔族小贩在毕节烤羊肉串，卖出 30 多万串、捐 10 余万，资助上百名学生；受助女孩赵敏成了教师</td>
+          <td><span class="tag">烟火特写</span><span class="tag">民族题材</span>烤串手部特写 AI 友好；故事年代稍远，重逢名场面需再挖</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<!-- ===== 06 第三梯队 ===== -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-no">陆</span>
+      <h2>第三梯队 · 特定方向可选</h2>
+    </div>
+    <ul class="mini-list">
+      <li><span class="m-name">王珏 · 兰小草 <span class="t-score">61</span></span><span>乡村医生化名「兰小草」每年匿名捐 2 万、坚持 15 年，缺席所有颁奖，去世后身份才揭晓。「他是谁」悬念天然强，适合做寻人式结构变体，温州全城寻他即全民重逢。</span></li>
+      <li><span class="m-name">邓卫星 · 猪肉爸爸 <span class="t-score">61</span></span><span>广东英德卖猪肉，35 年在家办「学生之家」收留 900–1122 名留守儿童吃住，最多时 68 个孩子同住。群像最壮观，但大量儿童群像恰是 AI 最大穿帮区，需海量真实素材兜底。</span></li>
+      <li><span class="m-name">刘盛兰 · 拾荒助学 <span class="t-score">61</span></span><span>招远孤寡老人，1996 年起拾荒 20 年捐 10 余万、资助百余名学生，20 年未尝肉味，感动中国 2013。故事扎实但与白方礼同质。</span></li>
+      <li><span class="m-name">赵家和 · 炭火教授 <span class="t-score">60</span></span><span>清华教授隐姓埋名，捐毕生积蓄 1500 余万成立甘肃兴华助学基金会，「千万不要让学生知道我的信息」，癌症后遗体捐献。知识分子的隐善悬念高级，但视觉符号偏弱。</span></li>
+      <li><span class="m-name">吴锦泉 · 磨刀老人 <span class="t-score">60</span></span><span>南通老人走街串巷磨刀，把辛苦钱与慰问金累计捐出 30 余万；带动「一元爱心社」、209 名公益后辈。磨刀火花与手部特写是 AI 最不容易穿帮的题材。</span></li>
+      <li><span class="m-name">谢永安 · 糖水爷爷 <span class="t-score">59</span></span><span>河南老人在武汉卖糖水 17 年，2 元一杯、免费续杯、老人小孩免费，2022 年走红后遭网暴停摊。现实批判锐度强，但报恩闭环弱，落点宜做「城市欠他一句道歉」。</span></li>
+      <li><span class="m-name">蒋国珍 · 最美乡村教师 <span class="t-score">59</span></span><span>新余离休教师，平反后把补发 22 年工资一次捐出，37 年捐 40 余万、惠及 2 万多人次，存折仅剩 1.36 元，全城送别。</span></li>
+      <li><span class="m-name">王宽 · 卖唱救孤 <span class="t-score">59</span></span><span>豫剧国家一级演员，退休后放下身段到茶楼卖唱十余年，养大 6 名孤儿，孩子均已成才。名角「点唱率为零」的反差是好戏，唱戏动作 AI 难度高。</span></li>
+      <li><span class="m-name">沈汝波 · 十万件好事 <span class="t-score">59</span></span><span>18 岁在军营立誓一生做 10 万件好事，40 年画「正」字计数、完成 11 万余件，去世后万人送别、市民接力。数字反常识，但缺一个具体的重逢人物。</span></li>
+      <li><span class="m-name">周火生 · 希望老人 <span class="t-score">57</span></span><span>昆山退休教师蹬三轮义卖图书，骑坏 5 辆车、100 次进金寨，个人捐 48 万、募资 1200 余万。与白方礼形象重叠。</span></li>
+      <li><span class="m-name">杜长胜 · 信义老爹 <span class="t-score">56</span></span><span>71 岁时儿子儿媳车祸双亡留下 330 万债务，他卖房卖厂、扛面粉 5 年还清本金，债主集体免利息。诚信题材动人，但与「报恩重逢」结构不匹配。</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== 07 不推荐 ===== -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-no">柒</span>
+      <h2>本轮不建议优先开发</h2>
+    </div>
+    <ul class="mini-list no-pick">
+      <li><span class="m-name">陈少洪 · 粽子爷爷</span><span>5 角粽子、38 年摆摊，故事本身可敬，但与参考片要素几乎完全同款（老人＋5 毛＋食物＋不涨价），观众会视为「续集」；且缺少真实的重逢 / 报恩名场面。</span></li>
+      <li><span class="m-name">赵永久 · 保洁员助学</span><span>30 多年捐 18 万、卖房助学，事迹感人，但公开影像与具体重逢故事都偏薄，信任锚点不足。</span></li>
+    </ul>
+  </div>
+</section>
+
+<!-- ===== 08 避坑 ===== -->
+<section>
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="sec-no">捌</span>
+      <h2>开发避坑清单 · 来自参考片评论区的真实教训</h2>
+    </div>
+    <div class="pit-grid">
+      <div class="pit-card">
+        <h4>方言必须匹配故事发生地</h4>
+        <p>参考片最集中的负面反馈是「浙江衢州的故事为什么用四川话」，热门评论中反复出现至少 8 次。改编时<b>按故事属地选方言或用标准普通话</b>，不要为了配音便利张冠李戴。</p>
+      </div>
+      <div class="pit-card">
+        <h4>数字口径必须经得起核对</h4>
+        <p>糖水是 1 元后涨至 2 元（非 17 年 2 元）、抗癌厨房由 5 角涨至 1 元、粽子 2009 年由 2 毛涨至 5 毛。新闻字幕<b>严格按权威媒体口径</b>，「不涨价」与「少涨价」要分清。</p>
+      </div>
+      <div class="pit-card">
+        <h4>真实素材的版权与隐私</h4>
+        <p>结尾信任锚点优先采用央视、新华社、地方文明网的公开报道画面并注明来源；评论区里「子女不管、遗产纠纷」等<b>未经证实的说法一律不采信、不入片</b>。</p>
+      </div>
+      <div class="pit-card">
+        <h4>AI 制作的四大穿帮区</h4>
+        <p>多人全景、大幅肢体动作、婴幼儿、水面反射最易穿帮。按参考片方法论：<b>特写承担叙事、群像与大场面用真实素材</b>，转场统一白闪＋whoosh，色调冷暖双轨。</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 落版 ===== -->
+<div class="closing">
+  <div class="wrap">
+    <div class="big">用「真实」背书，用「悬念」留人<br>用「时间」蓄力，用「重逢」引爆，<em>用「符号」传播</em></div>
+    <div class="seal">选题开发档案 · 2026.10</div>
+  </div>
+</div>
+
+<footer>
+  <div class="wrap">本看板事实均来自公开权威媒体报道，评分维度与结论供创作决策参考；真实人物影像版权归原权属方，仅作学习研究用途。</footer>
+
+<script>
+(function(){
+  var FONT = '"Noto Sans SC","PingFang SC",sans-serif';
+  var C = {cinnabar:'#C54833', gold:'#A98544', sage:'#6B7B6E', slate:'#5D6B78', gray:'#9A948A', ink:'#23272E'};
+
+  /* ===== 总榜条形图（升序，最大值在顶部） ===== */
+  var raw = [
+    ['赵永久 · 保洁员助学',54],['陈少洪 · 粽子爷爷',54],
+    ['杜长胜 · 信义老爹',56],['周火生 · 希望老人',57],
+    ['谢永安 · 糖水爷爷',59],['蒋国珍 · 最美乡村教师',59],['王宽 · 卖唱救孤',59],['沈汝波 · 十万件好事',59],
+    ['吴锦泉 · 磨刀老人',60],['赵家和 · 炭火教授',60],
+    ['刘盛兰 · 拾荒助学',61],['邓卫星 · 猪肉爸爸',61],['王珏 · 兰小草',61],
+    ['阿里木 · 烤串助学',63],['叶连平 · 乡村烛光',63],
+    ['白方礼 · 蹬三轮支教',65],['叶中央 · 灯塔世家',65],
+    ['唐才英 · 爱心妈妈',66],['万其珍 · 百年义渡',66],
+    ['莫振高 · 校长爸爸',67],['万佐成夫妇 · 抗癌厨房',67]
+  ];
+  function tierColor(s){
+    if(s>=66) return C.cinnabar;
+    if(s>=63) return C.gold;
+    if(s>=56) return C.sage;
+    return C.gray;
+  }
+  var rankChart = echarts.init(document.getElementById('rankChart'));
+  rankChart.setOption({
+    grid:{left:178,right:64,top:16,bottom:30,containLabel:false},
+    tooltip:{
+      trigger:'axis',axisPointer:{type:'shadow'},
+      textStyle:{fontFamily:FONT,fontSize:13},
+      formatter:function(p){return p[0].name.replace(' · ','｜')+'<br/>综合评分：<b>'+p[0].value+'</b> / 80';},
+      confine:true
+    },
+    xAxis:{
+      type:'value',min:48,max:70,interval:5,
+      axisLine:{show:false},axisTick:{show:false},
+      axisLabel:{color:C.ink,fontFamily:FONT,fontSize:12},
+      splitLine:{lineStyle:{color:'rgba(35,39,46,.10)'}}
+    },
+    yAxis:{
+      type:'category',
+      data:raw.map(function(d){return d[0];}),
+      axisLine:{lineStyle:{color:'rgba(35,39,46,.3)'}},
+      axisTick:{show:false},
+      axisLabel:{color:C.ink,fontFamily:FONT,fontSize:13}
+    },
+    series:[{
+      type:'bar',
+      data:raw.map(function(d){return {value:d[1], itemStyle:{color:tierColor(d[1])}};}),
+      barWidth:15,
+      label:{
+        show:true,position:'right',
+        color:C.ink,fontFamily:FONT,fontSize:12,fontWeight:600,
+        formatter:'{c}'
+      }
+    }]
+  });
+
+  /* ===== 首推雷达图 ===== */
+  var dims = ['视觉符号','反常识数字','时间跨度','重逢闭环','真实素材','差异化'];
+  var radarChart = echarts.init(document.getElementById('radarChart'));
+  radarChart.setOption({
+    color:[C.cinnabar,C.gold,C.slate,C.sage],
+    legend:{
+      data:['抗癌厨房','校长爸爸','百年义渡','爱心妈妈'],
+      top:6,textStyle:{color:C.ink,fontFamily:FONT,fontSize:13},
+      itemWidth:16,itemHeight:10
+    },
+    tooltip:{trigger:'item',textStyle:{fontFamily:FONT,fontSize:13},confine:true},
+    radar:{
+      indicator:dims.map(function(d){return {name:d,max:10};}),
+      center:['50%','56%'],radius:'62%',
+      axisName:{color:C.ink,fontFamily:FONT,fontSize:13,fontWeight:600},
+      splitLine:{lineStyle:{color:'rgba(35,39,46,.18)'}},
+      splitArea:{areaStyle:{color:['rgba(169,133,68,.05)','rgba(169,133,68,.10)']}},
+      axisLine:{lineStyle:{color:'rgba(35,39,46,.18)'}}
+    },
+    series:[{
+      type:'radar',
+      data:[
+        {name:'抗癌厨房',value:[9,8,8,8,10,8],areaStyle:{opacity:.08},lineStyle:{width:2}},
+        {name:'校长爸爸',value:[7,10,9,9,9,8],areaStyle:{opacity:.06},lineStyle:{width:2}},
+        {name:'百年义渡',value:[10,9,10,8,7,9],areaStyle:{opacity:.06},lineStyle:{width:2}},
+        {name:'爱心妈妈',value:[8,9,9,10,8,9],areaStyle:{opacity:.06},lineStyle:{width:2}}
+      ]
+    }]
+  });
+
+  window.addEventListener('resize',function(){rankChart.resize();radarChart.resize();});
+})();
+</script>
+</body>
+</html>

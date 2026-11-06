@@ -1,0 +1,817 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>爆款情感短片 · 可复用创作元素手册</title>
+<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='12' fill='%231a1612'/%3E%3Ctext x='32' y='44' font-size='34' text-anchor='middle' fill='%23c8893a' font-family='serif'%3E爆%3C/text%3E%3C/svg%3E">
+<style>
+:root{
+  --amber:#c8893a; --amber-d:#9a6620; --ink:#1a1612; --ink2:#2a231b;
+  --cream:#f5efe4; --cream2:#ece3d2; --paper:#faf6ec;
+  --cool:#6d8296; --coolbg:#e4e9ee;
+  --S:#a8331f; --A:#c8893a; --B:#6b7f4e; --C:#5b7a99;
+  --line:#d8ccb6; --muted:#7a6f5c;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei",sans-serif;
+  background:var(--cream); color:var(--ink); line-height:1.7; font-size:15px;
+}
+h1,h2,h3,.serif{font-family:"Songti SC","STSong","SimSun",serif}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1180px;margin:0 auto;padding:0 22px}
+
+/* ---------- 顶部导航 ---------- */
+header.nav{
+  position:sticky;top:0;z-index:50;background:rgba(26,22,18,.96);backdrop-filter:blur(6px);
+  color:var(--cream);border-bottom:2px solid var(--amber);
+}
+.nav-in{display:flex;align-items:center;gap:18px;height:52px;overflow-x:auto;white-space:nowrap}
+.nav-in b{color:var(--amber);font-family:"Songti SC",serif;font-size:16px;flex:none}
+.nav-in a{color:#cdc3af;font-size:13px;padding:4px 9px;border-radius:4px;flex:none}
+.nav-in a:hover{background:var(--amber);color:#fff}
+
+/* ---------- 封面 ---------- */
+.hero{background:linear-gradient(160deg,#1a1612 0%,#2a2118 60%,#3a2a16 100%);color:var(--cream);padding:64px 0 54px;border-bottom:4px solid var(--amber)}
+.hero .kicker{color:var(--amber);letter-spacing:3px;font-size:13px;margin-bottom:14px}
+.hero h1{font-size:40px;line-height:1.3;margin-bottom:8px;font-weight:700}
+.hero h1 span{color:var(--amber)}
+.hero .sub{color:#c9bda6;max-width:820px;margin-bottom:30px}
+.formula{
+  background:rgba(200,137,58,.12);border-left:4px solid var(--amber);border-radius:6px;
+  padding:20px 24px;font-size:16.5px;line-height:1.9;max-width:900px;
+}
+.formula b{color:#f0c47a}
+.formula .src{font-size:12.5px;color:#9c8f76;margin-top:10px;font-family:monospace}
+.hero .principles{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:34px;max-width:900px}
+.hero .principles div{background:rgba(255,255,255,.05);border:1px solid rgba(200,137,58,.3);border-radius:6px;padding:14px 16px;font-size:13.5px;color:#d8cdb6}
+.hero .principles b{color:#f0c47a;display:block;margin-bottom:4px;font-family:"Songti SC",serif}
+@media(max-width:760px){.hero h1{font-size:28px}.hero .principles{grid-template-columns:1fr}}
+
+/* ---------- 章节通用 ---------- */
+section{padding:46px 0 8px}
+.sec-head{display:flex;align-items:baseline;gap:14px;border-bottom:2px solid var(--ink);padding-bottom:10px;margin-bottom:26px}
+.sec-head .no{font-family:monospace;color:var(--amber);font-size:15px;font-weight:700}
+.sec-head h2{font-size:26px}
+.sec-head .en{margin-left:auto;font-size:12px;color:var(--muted);letter-spacing:1px}
+.lead{color:var(--muted);margin-bottom:20px;font-size:14px}
+.grid{display:grid;gap:16px}
+.cols3{grid-template-columns:repeat(3,1fr)}
+.cols2{grid-template-columns:repeat(2,1fr)}
+@media(max-width:820px){.cols3,.cols2{grid-template-columns:1fr}}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:18px 20px}
+.card h3{font-size:17px;margin-bottom:8px;color:var(--amber-d)}
+.tag{display:inline-block;font-size:11px;padding:1px 8px;border-radius:10px;color:#fff;font-weight:600;margin-right:6px;vertical-align:middle}
+.S{background:var(--S)} .A{background:var(--A)} .B{background:var(--B)} .C{background:var(--C)}
+.src-num{font-family:monospace;color:var(--amber-d);font-size:12px;background:var(--cream2);padding:0 5px;border-radius:3px}
+
+/* ---------- 条形图 ---------- */
+.chart{background:var(--paper);border:1px solid var(--line);border-radius:8px;padding:22px 24px;margin-bottom:22px}
+.chart h3{font-size:18px;margin-bottom:4px}
+.chart .desc{font-size:12.5px;color:var(--muted);margin-bottom:16px}
+.bar-row{display:grid;grid-template-columns:170px 1fr 96px;align-items:center;gap:10px;margin:7px 0;font-size:13px}
+.bar-row .lbl{text-align:right;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.bar-row .track{background:var(--cream2);border-radius:3px;height:20px;position:relative}
+.bar-row .fill{height:100%;border-radius:3px;min-width:2px}
+.bar-row .val{font-family:monospace;font-size:12.5px}
+.legend{display:flex;gap:18px;flex-wrap:wrap;margin:6px 0 14px;font-size:12.5px;color:var(--muted)}
+.legend i{display:inline-block;width:12px;height:12px;border-radius:2px;margin-right:5px;vertical-align:-1px}
+@media(max-width:640px){.bar-row{grid-template-columns:110px 1fr 80px;font-size:12px}}
+
+/* ---------- 表格 ---------- */
+.tbl-scroll{overflow-x:auto;border:1px solid var(--line);border-radius:8px;background:var(--paper)}
+table{border-collapse:collapse;width:100%;font-size:12.8px;min-width:880px}
+th,td{padding:8px 10px;text-align:center;border-bottom:1px solid var(--line);white-space:nowrap}
+th{background:var(--ink);color:var(--cream);font-weight:600;position:sticky;top:0}
+td.l,th.l{text-align:left}
+tr:nth-child(even){background:#f3ecdd}
+td b{color:var(--S)}
+
+/* ---------- 结论卡 ---------- */
+.concl{counter-reset:c}
+.concl .card{counter-increment:c;position:relative;padding-left:58px}
+.concl .card::before{
+  content:counter(c);position:absolute;left:16px;top:16px;width:30px;height:30px;
+  background:var(--amber);color:#fff;border-radius:50%;display:flex;align-items:center;justify-content:center;
+  font-family:"Songti SC",serif;font-weight:700;
+}
+.concl .card p{font-size:13.5px}
+.concl .card .to{display:block;margin-top:8px;color:var(--amber-d);font-weight:600;font-size:13px}
+
+/* ---------- 结构时间轴 ---------- */
+.flow{display:grid;grid-template-columns:repeat(7,1fr);gap:0;margin:10px 0 6px}
+.flow .step{position:relative;padding:0 6px}
+.flow .step .node{
+  background:var(--ink);color:var(--cream);border-radius:8px;padding:12px 10px;min-height:120px;
+  border-top:3px solid var(--amber);
+}
+.flow .step .node .t{font-family:monospace;font-size:11px;color:#f0c47a}
+.flow .step .node b{display:block;font-size:13.5px;margin:5px 0 4px;font-family:"Songti SC",serif}
+.flow .step .node p{font-size:11px;color:#c9bda6;line-height:1.5}
+.flow .step:not(:last-child)::after{
+  content:"▶";position:absolute;right:-7px;top:46px;color:var(--amber);font-size:11px;z-index:2;
+}
+@media(max-width:900px){.flow{grid-template-columns:1fr 1fr}.flow .step:not(:last-child)::after{display:none}}
+
+/* ---------- 代码块 ---------- */
+pre.code{
+  background:#211b14;color:#e8dcc4;border-radius:8px;padding:18px 20px;overflow-x:auto;
+  font-family:"SF Mono",Menlo,Consolas,monospace;font-size:12.8px;line-height:1.7;margin:10px 0;
+}
+pre.code .c{color:#9c8f76}
+.kv{background:var(--paper);border:1px dashed var(--amber);border-radius:8px;padding:16px 20px;font-size:13.5px}
+
+/* ---------- checkbox ---------- */
+.chk{list-style:none}
+.chk li{padding:6px 0 6px 30px;position:relative;font-size:13.5px;border-bottom:1px dotted var(--line)}
+.chk li::before{
+  content:"";position:absolute;left:2px;top:8px;width:15px;height:15px;border:2px solid var(--amber);border-radius:3px;background:#fff;
+}
+.chk li.on::before{background:var(--amber)}
+.chk li.on::after{content:"✓";position:absolute;left:4px;top:5px;color:#fff;font-size:12px;font-weight:700}
+
+/* ---------- 案例卡 ---------- */
+.cases{grid-template-columns:repeat(3,1fr)}
+.cases .card{border-top:4px solid var(--line);font-size:12.8px}
+.cases .card.S{border-top-color:var(--S)} .cases .card.A{border-top-color:var(--A)}
+.cases .card.B{border-top-color:var(--B)} .cases .card.C{border-top-color:var(--C)}
+.cases .card h3{font-size:14.5px;line-height:1.4}
+.cases .card p{margin:5px 0;color:#4a4234}
+.cases .card .reuse{color:var(--amber-d);font-weight:600;margin-top:8px}
+@media(max-width:900px){.cases{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:600px){.cases{grid-template-columns:1fr}}
+
+/* ---------- 雷区 ---------- */
+.pit{background:#2a1a14;border:2px solid var(--S);border-radius:10px;padding:26px 30px;color:#f0e3d3}
+.pit h2{color:#ff9a86}
+.pit table{min-width:760px}
+.pit th{background:var(--S)}
+.pit td{color:#e8d8c8;border-bottom:1px solid rgba(255,255,255,.12)}
+.pit tr:nth-child(even){background:rgba(255,255,255,.04)}
+
+/* ---------- 色板 ---------- */
+.swatches{display:flex;gap:14px;flex-wrap:wrap;margin:12px 0}
+.sw{flex:1;min-width:130px;border-radius:8px;overflow:hidden;border:1px solid var(--line)}
+.sw .box{height:70px}
+.sw .cap{background:var(--paper);padding:6px 10px;font-size:12px}
+
+footer{background:var(--ink);color:#8a7f6a;text-align:center;padding:30px 20px;font-size:12.5px;margin-top:50px}
+footer b{color:var(--amber)}
+.toc-top{font-size:12.5px;color:var(--muted);margin-bottom:20px}
+</style>
+</head>
+<body>
+
+<!-- ======================= 导航 ======================= -->
+<header class="nav"><div class="wrap nav-in">
+  <b>爆款创作手册</b>
+  <a href="#cover">封面·公式</a>
+  <a href="#data">数据排行</a>
+  <a href="#concl">7条结论</a>
+  <a href="#topic">选题公式</a>
+  <a href="#titles">标题句式</a>
+  <a href="#structure">结构骨架</a>
+  <a href="#hooks">钩子·泪点</a>
+  <a href="#emotion">情绪曲线</a>
+  <a href="#audiovisual">分镜视听</a>
+  <a href="#ai">AI适配</a>
+  <a href="#generator">剧本生成器</a>
+  <a href="#cases">13案例卡</a>
+  <a href="#pit">雷区</a>
+</div></header>
+
+<!-- ======================= 封面 ======================= -->
+<section class="hero" id="cover" style="padding-top:64px">
+  <div class="wrap">
+    <div class="kicker">基于 13 条真实数据验证的亲情 / 隔代爱短片 · 拉片归纳</div>
+    <h1>爆款情感短片<br><span>可复用创作元素手册</span></h1>
+    <p class="sub">不是赏析文章，而是生产工具。13 条片子（编号 01–13，多为品牌定制情感片）共享一套高度稳定、可复制的工业配方。开新片时按章节顺序调用。</p>
+    <div class="formula">
+      <b>一句话爆款公式：</b>一个真实 / 可信的底层小人物，用几十年重复一个"利他的小动作"，被一个反常识数字或一句强冲突台词在冷开场抛出；全片前 80% 用<b>冷暖双轨、旁白驱动、特写与信物</b>压住情绪，在结尾 10%–15% 用一次<b>重逢 / 物归原主 / 真实新闻影像</b>把情绪一次性引爆，最后以 <b>2–4 字毛笔字落版</b>。
+      <div class="src">来源：[01][03][04][06][07][09][12][13]　｜　合计约 4475 万赞 / 92 万评 / 354 万藏 / 623 万转</div>
+    </div>
+    <div class="principles">
+      <div><b>① 情绪烈度 &gt; 温馨</b>转发率最高的 [06]27.6% [05]22.1% [03]15.7% [04]15.6% 都带离别 / 死亡 / 亏欠痛感；纯温暖的 [02] 转发率仅 1.69%。</div>
+      <div><b>② 真实是最大杠杆</b>[01][04] 有结尾真实新闻影像背书；但白方礼 [12] 仅 43 万赞——真实人物不够，钩子 / 反常识数字 / 事实考证缺一不可。</div>
+      <div><b>③ 品牌不是减分项</b>[07] 冲到 513 万赞（S 级）。前提是商品成为"被爱的物证"，而不是插播的卖点口播。</div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= 数据排行 ======================= -->
+<section id="data"><div class="wrap">
+  <div class="sec-head"><span class="no">01</span><h2>数据排行：先看数据，再谈元素</h2><span class="en">DATA · 13 条全量已核验</span></div>
+  <p class="lead">互动率口径：评论率=评论/点赞，收藏率=收藏/点赞，转发率=转发/点赞，赞评比=点赞/评论（越低=讨论越活跃）。分级按点赞量级：<b>S≥500万 / A=100–500万 / B=50–100万 / C=40–44万</b>。</p>
+
+  <div class="legend">
+    <span><i style="background:var(--S)"></i>S 级（≥500万赞）</span>
+    <span><i style="background:var(--A)"></i>A 级（100–500万）</span>
+    <span><i style="background:var(--B)"></i>B 级（50–100万）</span>
+    <span><i style="background:var(--C)"></i>C 级（40–44万）</span>
+  </div>
+
+  <!-- 点赞排行 -->
+  <div class="chart">
+    <h3>① 按点赞量排行（万）</h3>
+    <p class="desc">[01] 断层第一 1842 万赞；S 级 3 条均有真实人物 / 团圆稀缺属性。标注品牌性质与真人属性。</p>
+    <div class="bar-row"><span class="lbl">01 早餐奶奶</span><div class="track"><div class="fill" style="width:100%;background:var(--S)"></div></div><span class="val">1842.0 万 ·真人</span></div>
+    <div class="bar-row"><span class="lbl">04 寻亲路</span><div class="track"><div class="fill" style="width:48%;background:var(--S)"></div></div><span class="val">884.8 万 ·真人公益</span></div>
+    <div class="bar-row"><span class="lbl">07 爷爷小屋</span><div class="track"><div class="fill" style="width:27.9%;background:var(--S)"></div></div><span class="val">513.3 万 ·蓝盒子</span></div>
+    <div class="bar-row"><span class="lbl">06 爷爷放假了</span><div class="track"><div class="fill" style="width:25.9%;background:var(--A)"></div></div><span class="val">477.9 万 ·非品牌</span></div>
+    <div class="bar-row"><span class="lbl">03 拾荒奶奶</span><div class="track"><div class="fill" style="width:10.4%;background:var(--A)"></div></div><span class="val">192.2 万 ·芝华仕</span></div>
+    <div class="bar-row"><span class="lbl">05 一个冬天留守</span><div class="track"><div class="fill" style="width:6.5%;background:var(--A)"></div></div><span class="val">119.2 万 ·非品牌</span></div>
+    <div class="bar-row"><span class="lbl">09 奶奶心安归宿</span><div class="track"><div class="fill" style="width:5.3%;background:var(--B)"></div></div><span class="val">97.4 万 ·六神×京东</span></div>
+    <div class="bar-row"><span class="lbl">02 上春晚</span><div class="track"><div class="fill" style="width:5.1%;background:var(--B)"></div></div><span class="val">94.6 万 ·伊利</span></div>
+    <div class="bar-row"><span class="lbl">08 妈妈的选择</span><div class="track"><div class="fill" style="width:4.1%;background:var(--B)"></div></div><span class="val">75.8 万 ·海尔×京东</span></div>
+    <div class="bar-row"><span class="lbl">10 爱不消失</span><div class="track"><div class="fill" style="width:2.7%;background:var(--B)"></div></div><span class="val">50.4 万 ·金橡树</span></div>
+    <div class="bar-row"><span class="lbl">11 一片苇叶</span><div class="track"><div class="fill" style="width:2.4%;background:var(--C)"></div></div><span class="val">43.5 万 ·京东千县</span></div>
+    <div class="bar-row"><span class="lbl">12 白爷爷三轮车</span><div class="track"><div class="fill" style="width:2.3%;background:var(--C)"></div></div><span class="val">43.0 万 ·真人白方礼</span></div>
+    <div class="bar-row"><span class="lbl">13 守住快递</span><div class="track"><div class="fill" style="width:2.2%;background:var(--C)"></div></div><span class="val">40.7 万 ·非品牌</span></div>
+  </div>
+
+  <!-- 转发率排行 -->
+  <div class="chart">
+    <h3>② 转发率排行（%）· "催泪弹"试金石</h3>
+    <p class="desc"><b>四大催泪弹 [06][05][03][04]</b>（离别 / 死亡 / 寻亲 / 留守）破圈最强；<b>垫底的 [02][10]</b> 都是"温暖但不扎心、不指向具体他人"，看完即走。</p>
+    <div class="bar-row"><span class="lbl">06 爷爷放假了</span><div class="track"><div class="fill" style="width:100%;background:var(--S)"></div></div><span class="val">27.60%</span></div>
+    <div class="bar-row"><span class="lbl">05 一个冬天留守</span><div class="track"><div class="fill" style="width:80%;background:var(--S)"></div></div><span class="val">22.06%</span></div>
+    <div class="bar-row"><span class="lbl">03 拾荒奶奶</span><div class="track"><div class="fill" style="width:56.7%;background:var(--S)"></div></div><span class="val">15.66%</span></div>
+    <div class="bar-row"><span class="lbl">04 寻亲路</span><div class="track"><div class="fill" style="width:56.6%;background:var(--S)"></div></div><span class="val">15.63%</span></div>
+    <div class="bar-row"><span class="lbl">01 早餐奶奶</span><div class="track"><div class="fill" style="width:42.5%;background:var(--A)"></div></div><span class="val">11.74%</span></div>
+    <div class="bar-row"><span class="lbl">09 心安归宿</span><div class="track"><div class="fill" style="width:41.7%;background:var(--A)"></div></div><span class="val">11.50%</span></div>
+    <div class="bar-row"><span class="lbl">13 守住快递</span><div class="track"><div class="fill" style="width:40.1%;background:var(--A)"></div></div><span class="val">11.06%</span></div>
+    <div class="bar-row"><span class="lbl">08 妈妈的选择</span><div class="track"><div class="fill" style="width:38.7%;background:var(--B)"></div></div><span class="val">10.69%</span></div>
+    <div class="bar-row"><span class="lbl">07 爷爷小屋</span><div class="track"><div class="fill" style="width:34.5%;background:var(--B)"></div></div><span class="val">9.51%</span></div>
+    <div class="bar-row"><span class="lbl">12 白爷爷</span><div class="track"><div class="fill" style="width:23.6%;background:var(--C)"></div></div><span class="val">6.51%</span></div>
+    <div class="bar-row"><span class="lbl">11 一片苇叶</span><div class="track"><div class="fill" style="width:12.5%;background:var(--C)"></div></div><span class="val">3.45%</span></div>
+    <div class="bar-row"><span class="lbl">10 爱不消失</span><div class="track"><div class="fill" style="width:8.6%;background:#8a6a6a"></div></div><span class="val">2.38% ·垫底</span></div>
+    <div class="bar-row"><span class="lbl">02 上春晚</span><div class="track"><div class="fill" style="width:6.1%;background:#8a6a6a"></div></div><span class="val">1.69% ·垫底</span></div>
+  </div>
+
+  <!-- 三率对比表 -->
+  <div class="chart">
+    <h3>③ 评论率 / 收藏率 / 赞评比 对比</h3>
+    <p class="desc">评论率高=议题性强（[13][12][05]）；收藏率高=有可截图金句 / 数字（[05][03][06]）；赞评比越低=讨论越活跃（[13][12][05]），越高=看完即走（[10]127.4 / [02]102.8）。</p>
+    <div class="tbl-scroll"><table>
+      <colgroup><col style="width:6%"><col style="width:20%"><col style="width:14%"><col style="width:14%"><col style="width:14%"><col style="width:14%"><col style="width:18%"></colgroup>
+      <tr><th>编号</th><th class="l">简称</th><th>评论率%</th><th>收藏率%</th><th>转发率%</th><th>赞评比</th><th>强项</th></tr>
+      <tr><td>01</td><td class="l">早餐奶奶</td><td>1.76</td><td>7.60</td><td>11.74</td><td>56.7</td><td>真实影像</td></tr>
+      <tr><td>02</td><td class="l">上春晚</td><td>0.97</td><td>5.50</td><td>1.69</td><td><b>102.8</b></td><td>反面·纯温馨</td></tr>
+      <tr><td>03</td><td class="l">拾荒奶奶</td><td>1.88</td><td><b>11.81</b></td><td>15.66</td><td>53.2</td><td>收藏高</td></tr>
+      <tr><td>04</td><td class="l">寻亲路</td><td>2.62</td><td>7.75</td><td>15.63</td><td>38.1</td><td>公共议题</td></tr>
+      <tr><td>05</td><td class="l">一个冬天留守</td><td>3.52</td><td><b>12.58</b></td><td>22.06</td><td>28.4</td><td>收藏最高</td></tr>
+      <tr><td>06</td><td class="l">爷爷放假了</td><td>2.03</td><td><b>11.32</b></td><td><b>27.60</b></td><td>49.3</td><td>转发第一</td></tr>
+      <tr><td>07</td><td class="l">爷爷小屋</td><td>1.58</td><td>4.83</td><td>9.51</td><td>63.4</td><td>品牌天花板</td></tr>
+      <tr><td>08</td><td class="l">妈妈的选择</td><td>1.85</td><td>7.65</td><td>10.69</td><td>54.1</td><td>语义反转</td></tr>
+      <tr><td>09</td><td class="l">心安归宿</td><td>2.05</td><td>5.13</td><td>11.50</td><td>48.7</td><td>道具化植入</td></tr>
+      <tr><td>10</td><td class="l">爱不消失</td><td>0.78</td><td>6.35</td><td>2.38</td><td><b>127.4</b></td><td>反面·绑定弱</td></tr>
+      <tr><td>11</td><td class="l">一片苇叶</td><td>2.99</td><td>9.89</td><td>3.45</td><td>33.5</td><td>助农</td></tr>
+      <tr><td>12</td><td class="l">白爷爷</td><td><b>5.12</b></td><td>7.44</td><td>6.51</td><td>19.6</td><td>评论高</td></tr>
+      <tr><td>13</td><td class="l">守住快递</td><td><b>6.39</b></td><td>5.65</td><td>11.06</td><td><b>15.7</b></td><td>评论率最高</td></tr>
+    </table></div>
+  </div>
+
+  <!-- 完整数据总表 -->
+  <div class="chart">
+    <h3>④ 13 条完整数据总表</h3>
+    <p class="desc">数字照录各拉片原文，已核验。横向滚动查看全部字段。</p>
+    <div class="tbl-scroll"><table>
+      <colgroup><col style="width:5%"><col style="width:18%"><col style="width:13%"><col style="width:8%"><col style="width:8%"><col style="width:9%"><col style="width:8%"><col style="width:8%"><col style="width:8%"><col style="width:8%"><col style="width:8%"><col style="width:7%"></colgroup>
+      <tr><th>编号</th><th class="l">简称</th><th class="l">品牌/性质</th><th>时长s</th><th>赞(万)</th><th>评(万)</th><th>藏(万)</th><th>转(万)</th><th>评论率%</th><th>收藏率%</th><th>转发率%</th><th>赞评比</th></tr>
+      <tr><td>01</td><td class="l">一份怜爱·早餐奶奶</td><td class="l">非品牌·真人</td><td>244</td><td><b>1842.0</b></td><td>32.5</td><td>139.9</td><td>216.3</td><td>1.76</td><td>7.60</td><td>11.74</td><td>56.7</td></tr>
+      <tr><td>02</td><td class="l">岁月偷不走·上春晚</td><td class="l">伊利欣活</td><td>177</td><td>94.6</td><td>0.92</td><td>5.2</td><td>1.6</td><td>0.97</td><td>5.50</td><td>1.69</td><td>102.8</td></tr>
+      <tr><td>03</td><td class="l">拾荒奶奶星星约定</td><td class="l">芝华仕</td><td>231</td><td>192.2</td><td>3.62</td><td>22.7</td><td>30.1</td><td>1.88</td><td>11.81</td><td>15.66</td><td>53.2</td></tr>
+      <tr><td>04</td><td class="l">寻亲路</td><td class="l">公益·真人</td><td>215</td><td><b>884.8</b></td><td>23.2</td><td>68.6</td><td>138.3</td><td>2.62</td><td>7.75</td><td>15.63</td><td>38.1</td></tr>
+      <tr><td>05</td><td class="l">一个冬天留守</td><td class="l">非品牌</td><td>235</td><td>119.2</td><td>4.2</td><td>15.0</td><td>26.3</td><td>3.52</td><td>12.58</td><td>22.06</td><td>28.4</td></tr>
+      <tr><td>06</td><td class="l">爷爷放假了</td><td class="l">非品牌</td><td>274</td><td>477.9</td><td>9.7</td><td>54.1</td><td>131.9</td><td>2.03</td><td>11.32</td><td>27.60</td><td>49.3</td></tr>
+      <tr><td>07</td><td class="l">爷爷小屋</td><td class="l">蓝盒子床垫</td><td>238</td><td><b>513.3</b></td><td>8.1</td><td>24.8</td><td>48.8</td><td>1.58</td><td>4.83</td><td>9.51</td><td>63.4</td></tr>
+      <tr><td>08</td><td class="l">妈妈的选择</td><td class="l">海尔×京东</td><td>199</td><td>75.8</td><td>1.4</td><td>5.8</td><td>8.1</td><td>1.85</td><td>7.65</td><td>10.69</td><td>54.1</td></tr>
+      <tr><td>09</td><td class="l">奶奶心安归宿</td><td class="l">六神×京东</td><td>183</td><td>97.4</td><td>2.0</td><td>5.0</td><td>11.2</td><td>2.05</td><td>5.13</td><td>11.50</td><td>48.7</td></tr>
+      <tr><td>10</td><td class="l">爱不消失</td><td class="l">金橡树床垫</td><td>297</td><td>50.4</td><td>0.40</td><td>3.2</td><td>1.2</td><td>0.78</td><td>6.35</td><td>2.38</td><td>127.4</td></tr>
+      <tr><td>11</td><td class="l">一片苇叶</td><td class="l">京东千县</td><td>239</td><td>43.5</td><td>1.3</td><td>4.3</td><td>1.5</td><td>2.99</td><td>9.89</td><td>3.45</td><td>33.5</td></tr>
+      <tr><td>12</td><td class="l">白爷爷三轮车</td><td class="l">非品牌·真人</td><td>153</td><td>43.0</td><td>2.2</td><td>3.2</td><td>2.8</td><td>5.12</td><td>7.44</td><td>6.51</td><td>19.6</td></tr>
+      <tr><td>13</td><td class="l">守住快递</td><td class="l">非品牌</td><td>154</td><td>40.7</td><td>2.6</td><td>2.3</td><td>4.5</td><td>6.39</td><td>5.65</td><td>11.06</td><td>15.7</td></tr>
+    </table></div>
+    <p class="toc-top" style="margin-top:12px">诚实提醒：[01][04] 发布于账号成长期（2026 年 4–5 月），可能吃到涨粉期算法红利；6 月下旬后作品稳定回到 40–200 万区间。绝对点赞不能唯高低论，要结合转发率 / 收藏率 / 评论率一起看。</p>
+  </div>
+</div></section>
+
+<!-- ======================= 7条结论 ======================= -->
+<section id="concl" style="background:var(--cream2)"><div class="wrap">
+  <div class="sec-head"><span class="no">02</span><h2>数据驱动的 7 条关键结论</h2><span class="en">CONCLUSIONS · 元素必须对应数据</span></div>
+  <div class="grid cols3 concl">
+    <div class="card"><h3>转发率 = 催泪弹试金石</h3><p>四巨头 [06]27.6% &gt; [05]22.1% &gt; [03]15.7% ≈ [04]15.6%，共性是强亲情 / 社会议题 + 悲剧离别底色 + 可 @ 某个具体家人。垫底 [02]1.69% [10]2.38% 看完即走。<span class="src-num">[06][05][03][04][02][10]</span></p><span class="to">→ "观众会不会想转发给某个具体的人"当硬指标</span></div>
+    <div class="card"><h3>真实影像 = S 级放大器</h3><p>[01][04] 结尾各 15–24 秒真实资料，是断层前二；但 [12] 同样有真实素材却只 C 级——真实是"放大器"不是"决定项"，还需反常识数字与无事实硬伤。<span class="src-num">[01][04][12]</span></p><span class="to">→ 真实 + 钩子 + 考证，缺一不可</span></div>
+    <div class="card"><h3>品牌片能进 S 级的关键</h3><p>商品"道具化 / 情感载体化"：[07] 蓝盒子 513 万、[09] 六神、[08] 海尔均成立，评论区无视广告专注情感；[10] 床垫与寻亲绑定弱 + 节奏过缓，转发率仅 2.38%。<span class="src-num">[07][09][08][10]</span></p><span class="to">→ 商品=被爱的物证，不是卖点口播</span></div>
+    <div class="card"><h3>离别 / 遗憾 &gt; 大团圆</h3><p>高转发榜被死亡 [03][06]、留守离别 [05][13]、寻亲 [04][10] 占据；唯一大团圆 [07] 之所以爆，正因"34 岁还有爷爷等他回家"在一片悲情里成了稀缺品。<span class="src-num">[03][06][05][13][04][10][07]</span></p><span class="to">→ 团圆要做成"观众求而不得的稀缺团圆"</span></div>
+    <div class="card"><h3>评论率高 = 议题性强</h3><p>[13]6.39% [12]5.12% [05]3.52% [04]2.62% 都踩中留守儿童、支教、打拐、公益评选等公共议题，评论区变"互助 / 倾诉 / 辩论现场"。<span class="src-num">[13][12][05][04]</span></p><span class="to">→ 私人亲情里嵌一个公共议题，拉高二次传播</span></div>
+    <div class="card"><h3>收藏率高靠可存档金句</h3><p>[05]12.58% [03]11.81% [06]11.32% 最高，都有可截图金句（[13]"那些被温柔守护过的童年…"）或震撼数字（4179 万留守）。<span class="src-num">[05][03][06][13]</span></p><span class="to">→ 必须设计一句能单独截图传播的话</span></div>
+    <div class="card" style="grid-column:1/-1"><h3>国民人物 IP ≠ 流量，事实硬伤会反噬</h3><p>[12] 白方礼国民度最高却 C 级，且因"四川话配天津 / 沧州原型"被评论区点名、钩子后全片偏平；[03] 也有吴语配内蒙古的同类质疑。<span class="src-num">[12][03]</span></p><span class="to">→ 真实题材的方言、地名、数字、年代必须考证一致（见雷区章）</span></div>
+  </div>
+</div></section>
+
+<!-- ======================= 选题公式 ======================= -->
+<section id="topic"><div class="wrap">
+  <div class="sec-head"><span class="no">03</span><h2>选题公式库：题材 · 人物原型 · 情感内核</h2><span class="en">TOPIC</span></div>
+
+  <div class="grid cols2" style="margin-bottom:20px">
+    <div class="card">
+      <h3>题材簇分布（隔代亲情是绝对主力）</h3>
+      <div class="tbl-scroll"><table style="min-width:340px">
+        <colgroup><col style="width:38%"><col style="width:32%"><col style="width:30%"></colgroup>
+        <tr><th class="l">题材簇</th><th class="l">案例</th><th>提示</th></tr>
+        <tr><td class="l"><b>隔代亲情（祖辈×我）</b></td><td class="l">[01][03][06][07][09][12][13]</td><td>7/13 最稳基本盘</td></tr>
+        <tr><td class="l">寻亲 / 打拐</td><td class="l">[04][10]</td><td>高评论 / 转发</td></tr>
+        <tr><td class="l">留守 / 隔代抚养</td><td class="l">[05][09][13]</td><td>亲历者表达欲最强</td></tr>
+        <tr><td class="l">家乡 / 助农非遗</td><td class="l">[11]</td><td>评论区家乡味接龙</td></tr>
+        <tr><td class="l">婚姻 / 母亲救赎</td><td class="l">[08]</td><td>性别议题辩论激烈</td></tr>
+        <tr><td class="l">老人追梦</td><td class="l">[02]</td><td>温馨向，数据偏弱</td></tr>
+      </table></div>
+      <div class="kv" style="margin-top:12px"><b>选题优先级公式：</b><br>隔代亲情（最大公约数）× 一个有公共讨论度的社会议题 × 一层离别 / 亏欠的痛感。三者叠加最强 [04][05][13][01]；只占"温馨"最弱 [02]。</div>
+    </div>
+    <div class="card">
+      <h3>情感内核清单（选一个做主心骨）</h3>
+      <div style="font-size:13.5px;line-height:2">
+        <p>· <b>亏欠与报恩</b>：你养我小，我没能 / 终于养你老 <span class="src-num">[03][07][09][13]</span></p>
+        <p>· <b>被偏爱的证据</b>：被全世界忽视时，有一个人把你当宝贝 <span class="src-num">[03][09]</span></p>
+        <p>· <b>迟来的懂得</b>：当年误解怨恨，长大后才懂 <span class="src-num">[08][09][06]</span></p>
+        <p>· <b>善意的重量与时代的辜负</b>：好人倾其所有却清贫 / 被遗忘 <span class="src-num">[01][12]</span></p>
+        <p>· <b>物在人去 / 失而复得</b>：信物还在人已不在，或找几十年终于团圆 <span class="src-num">[06][04][10]</span></p>
+        <p>· <b>守护弱者的尊严</b>：为孩子守住一个体面的念想 <span class="src-num">[13][05][12]</span></p>
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h3>人物原型库（主角 = 长期主义的利他者）</h3>
+    <div class="tbl-scroll"><table style="min-width:640px">
+      <colgroup><col style="width:20%"><col style="width:24%"><col style="width:34%"><col style="width:22%"></colgroup>
+      <tr><th class="l">原型</th><th class="l">案例</th><th class="l">重复 N 年的利他动作</th><th class="l">核心信物</th></tr>
+      <tr><td class="l">摆摊老人</td><td class="l">[01]卖早餐 [11]包粽</td><td class="l">几十年不涨价 / 一个手艺撑起家</td><td class="l">包子、苇叶粽子</td></tr>
+      <tr><td class="l">拾荒 / 底层老人</td><td class="l">[03]拾荒奶奶</td><td class="l">捡废品供弃婴读书</td><td class="l">废品、星星画、沙发</td></tr>
+      <tr><td class="l">乡村爷爷</td><td class="l">[06][07][12][13]</td><td class="l">偷偷攒物 / 钱、自费助学 / 写假快递</td><td class="l">糖、蓝盒子、三轮车+馒头、钢笔+假包裹</td></tr>
+      <tr><td class="l">被误解的母亲</td><td class="l">[08][10]</td><td class="l">忍到孩子高考后离婚 / 寻女16年</td><td class="l">洗衣机、寻人启事+床垫</td></tr>
+      <tr><td class="l">被弃 / 留守的"我"</td><td class="l">[03][04][05][09][13]</td><td class="l">接受善意，成年后报恩 / 懂得</td><td class="l">录取通知书、旧物</td></tr>
+      <tr><td class="l">群体主角（罕见易爆）</td><td class="l">[04][11]</td><td class="l">一群人的长期坚持</td><td class="l">寻人启事、特产</td></tr>
+    </table></div>
+    <div class="grid cols4" style="grid-template-columns:repeat(4,1fr);gap:12px;margin-top:14px">
+      <div class="kv"><b>① 身份要"低"</b><br>老人、文盲、残障、底层、丧偶、留守——越弱势善意越重 <span class="src-num">[01][03][11][13]</span></div>
+      <div class="kv"><b>② 动作要"小而重复"</b><br>能拍成特写的小动作：包、捡、攒、蹬、递、守、贴，重复十几年到几十年 <span class="src-num">[01][12][13]</span></div>
+      <div class="kv"><b>③ 动机"不求回报"</b><br>旁人质疑"图啥"，主角轻描淡写回应（[12]"只要娃儿能读书，我不在乎记不记得到我"）</div>
+      <div class="kv"><b>④ 与"我"命运级关联</b><br>叙述者是直接受益者，成年后形成报恩 / 重逢闭环 <span class="src-num">[03][07][09][13]</span></div>
+    </div>
+  </div>
+</div></section>
+
+<!-- ======================= 标题句式 ======================= -->
+<section id="titles" style="background:var(--cream2)"><div class="wrap">
+  <div class="sec-head"><span class="no">04</span><h2>标题句式模板 T1–T8</h2><span class="en">TITLES · 13 个标题就是现成素材</span></div>
+  <div class="grid cols2">
+    <div class="card"><h3><span class="tag A">T1</span>反常识数字 + 长期坚持</h3><p style="font-size:13.5px">范式：一(量词)(抽象的爱/物)，(他/她)(坚持)了(数字)年！<br>案例：[01]「一份怜爱，她坚持了二十多年！」；[04]「他们的寻亲路花了几十年」</p><div class="kv" style="margin-top:8px">填空：<code>一份____，他____了____年！</code></div></div>
+    <div class="card"><h3><span class="tag A">T2</span>小物件承载大命运</h3><p style="font-size:13.5px">范式：一(小物件)，(双关动词)起了/着(我的人生/无数人的未来/整个家乡)<br>案例：[12]「一辆三轮车，驼着无数孩子的未来」；[11]「一片苇叶，包起了我的人生，也包起了整个家乡的希望」</p><div class="kv" style="margin-top:8px">填空：<code>一____，____起了____</code>（驼=驮货/托起；包=包粽/包容）</div></div>
+    <div class="card"><h3><span class="tag A">T3</span>否定纠偏 / 递进翻转</h3><p style="font-size:13.5px">案例：[08]「妈妈的选择不是抛弃，只是救赎了自己」；[13]「他守住的不止是那份快递，还守住了留守孩子们的期待」</p><div class="kv" style="margin-top:8px">填空：<code>____不是____，只是____</code> ／ <code>他____的不止是____，还____了____</code></div></div>
+    <div class="card"><h3><span class="tag A">T4</span>称谓 + 判断式金句（可做落版）</h3><p style="font-size:13.5px">案例：[09]「有奶奶在的地方，才是心安的归宿」；[07]「最暖的归栖是爷爷在的小屋」</p><div class="kv" style="margin-top:8px">填空：<code>有____在的地方，才是____</code></div></div>
+    <div class="card"><h3><span class="tag A">T5</span>对仗拈连（同动词正反两用）</h3><p style="font-size:13.5px">案例：[02]「岁月偷走了青春，偷不走心中的热爱」</p><div class="kv" style="margin-top:8px">填空：<code>____走了____，____不走____</code></div></div>
+    <div class="card"><h3><span class="tag A">T6</span>直接引语 / 第二人称催泪</h3><p style="font-size:13.5px">案例：[06]「爷爷马上要放假了我又想你了」（孩子口吻一句原话）</p><div class="kv" style="margin-top:8px">填空：直接引用片中小主角最天真的一句话做标题</div></div>
+    <div class="card"><h3><span class="tag A">T7</span>情绪词 + 抽象普适主题</h3><p style="font-size:13.5px">案例：[10]「幸好，爱不会因为时间消失」</p><div class="kv" style="margin-top:8px">填空：<code>幸好，____不会因为____消失</code></div></div>
+    <div class="card"><h3><span class="tag A">T8</span>时间量词反差（短时补大遗憾）</h3><p style="font-size:13.5px">案例：[05]「她用一个冬天补回缺席时光」</p><div class="kv" style="margin-top:8px">填空：<code>她用一____，____回____</code></div></div>
+  </div>
+  <div class="kv" style="margin-top:16px"><b>共性规律：</b>①必有具象锚点（称谓 / 小物件）②偏爱反差与翻转 ③第一人称"我"或直接引语拉近距离 ④偏长、口语化、像一句叹息，品牌名不进主标题 ⑤最强标题本身就是可截图金句 [09][13]。建议新片按 T1–T4 各写一版，选"含称谓/物件 + 有反差 + 念出来像叹息"的那条。</div>
+</div></section>
+
+<!-- ======================= 结构骨架 ======================= -->
+<section id="structure"><div class="wrap">
+  <div class="sec-head"><span class="no">05</span><h2>结构骨架：7 拍节拍时间轴</h2><span class="en">STRUCTURE · 12/13 都在用</span></div>
+  <p class="lead">主导结构=六段式环形报恩骨架：现实冷开场钩子 → 立弱者·困境 → 善意建立 → 时间蒙太奇·三次升级 → 假高潮后压回 → 重逢真爆发 → 毛笔字落版。首尾用同机位 / 同台词 / 同信物闭环。</p>
+
+  <div class="flow">
+    <div class="step"><div class="node"><span class="t">0–5%</span><b>① 冷开场钩子</b><p>抛反常识数字 / 强冲突台词 / 物件特写，给信息缺口不给前因后果。[01]5毛包子旁白；[13]"你在骗娃娃"</p></div></div>
+    <div class="step"><div class="node"><span class="t">5–25%</span><b>② 立弱者+困境</b><p>被弃/留守/贫穷/丧偶/被误解，把处境压到最低。[03]被骂野种；[05]无人接送</p></div></div>
+    <div class="step"><div class="node"><span class="t">20–30%</span><b>③ 善意建立</b><p>一个"递/接/留/养"的小动作，确立利他选择。[12]递馒头；[09]"你们不养我养"</p></div></div>
+    <div class="step"><div class="node"><span class="t">30–70%</span><b>④ 蒙太奇三次升级</b><p>年份/年龄/季节标签卡，让小动作重复 N 年；插旁人质疑、小成功、更大困难。[09]9张年龄卡</p></div></div>
+    <div class="step"><div class="node"><span class="t">60–80%</span><b>⑤ 假高潮即收回</b><p>先给温情/小团圆让音乐涌起，立刻用离别/死亡/失败压回。[06]葬礼不哭</p></div></div>
+    <div class="step"><div class="node"><span class="t">75–95%</span><b>⑥ 重逢·真爆发</b><p>物归原主/身份揭晓/语义反转/真实新闻切入，BGM 全频铺满，金句出现。[13]钢笔压录取通知书</p></div></div>
+    <div class="step"><div class="node"><span class="t">末5–10%</span><b>⑦ 毛笔字落版</b><p>可截图金句 + 2–4字毛笔称号，音乐高位定格。怜爱/团圆/陪伴/归宿/回家/白爷爷</p></div></div>
+  </div>
+
+  <h3 style="margin:26px 0 12px;font-family:'Songti SC',serif">三种结构变体（按题材选）</h3>
+  <div class="grid cols3">
+    <div class="card"><h3>A · 环形报恩型（最主流）</h3><p style="font-size:13.5px">现在钩子→闪回→蒙太奇→重逢物归原主→真实佐证。适合隔代亲情、报恩、真实人物。<br><span class="src-num">[01][03][04][07][09][11][12][13]</span></p></div>
+    <div class="card"><h3>B · 单线顺叙+标签卡</h3><p style="font-size:13.5px">按年龄/季节顺序讲，靠「X岁时」「春/夏/秋/冬」卡推进，结尾闭环。适合成长、留守、丧亲。<br><span class="src-num">[05][06][09][13]</span></p></div>
+    <div class="card"><h3>C · 三幕语义反转</h3><p style="font-size:13.5px">同一物件/同一句抱怨在前后两空间语义完全反转，可无年代闪回。适合现代家庭、品牌观念片。<br><span class="src-num">[08]（旧抱怨→新满足）[10]（母买女→女买母）</span></p></div>
+  </div>
+  <div class="kv" style="margin-top:14px"><b>时长与节奏规律：</b>时长 153–297 秒，中位数约 231 秒（<b>3 分半–4 分半是爆款甜区</b>，S/A 级多落 215–274 秒）；镜头数 17–30 个，平均约 23 个，即 <b>8–12 秒/镜的慢节奏</b>，时间蒙太奇才快切（[13]12秒切15刀）。长而不闷靠三样：旁白持续给信息、标签卡推进时间、信物/台词悬念牵引。</div>
+</div></section>
+
+<!-- ======================= 钩子 · 泪点 · 品牌 ======================= -->
+<section id="hooks" style="background:var(--cream2)"><div class="wrap">
+  <div class="sec-head"><span class="no">06</span><h2>开场钩子库 H1–H6 与泪点装置 / 品牌植入</h2><span class="en">HOOKS · TEARS · BRAND</span></div>
+
+  <h3 style="margin-bottom:12px;font-family:'Songti SC',serif">开场钩子库（前 3 秒制造信息缺口）</h3>
+  <div class="grid cols3">
+    <div class="card"><h3><span class="tag C">H1</span>反常识数字砸脸</h3><p style="font-size:13px">最适合真实人物/公益。[01]"二十多年前五毛的大包子如今还是五毛"+手揭蒸笼；[12]"捐款不留一分钱，一天啃半个馒头"；[10]"找女儿第16个年头"。</p><div class="kv" style="margin-top:6px;font-size:12px"><code>(他/她)____，自己却____，这一____就是____年</code></div></div>
+    <div class="card"><h3><span class="tag C">H2</span>强冲突台词/道德悬念</h3><p style="font-size:13px">留人最强。[13]"你啷个还在骗这些娃娃"→"不骗不行啊"；[08]递通知书+"我要跟你爸离婚"；[09]"你们不养我养"；[03]"你是垃圾桶里捡来的"。</p><div class="kv" style="margin-top:6px;font-size:12px">一句指责/噩耗+主角不辩解，只轻描淡写回一句</div></div>
+    <div class="card"><h3><span class="tag C">H3</span>物件特写快切</h3><p style="font-size:13px">先给手不给脸，AI 最友好。[13]手写"广东寄"包裹；[10]抚平寻人启事；[03]废品中翻找；[01]装包子的手。</p><div class="kv" style="margin-top:6px;font-size:12px">苍老的手特写在____ + 旁白"这是我____的第____年"</div></div>
+    <div class="card"><h3><span class="tag C">H4</span>现代提问+被笑+沉默背影</h3><p style="font-size:13px">[11]老师"大家最爱吃什么"，全班披萨/牛排，女儿说"粽子"被哄笑"好土"，镜头停在后排沉默妈妈。天然制造"被笑→翻身"闭环。</p></div>
+    <div class="card"><h3><span class="tag C">H5</span>直接引语催泪</h3><p style="font-size:13px">[06]孩子口吻"爷爷马上要放假了，我又想你了"，开场即定调，不设悬念靠情绪硬拉。适合丧亲/思念。</p></div>
+    <div class="card"><h3><span class="tag C">H6</span>反差身份/结果前置</h3><p style="font-size:13px">先给结果/现在身份再倒叙。[03]销冠自述"被捡来"；[10]重逢电话"找到了"在前、寻亲在后。</p></div>
+  </div>
+  <div class="kv" style="margin-top:14px"><b>钩子 4 条规则：</b>①冷调+特写+旁白，少全景热闹 ②第一句必有钩（数字/冲突/悬念/反常四选一）③信息缺口要能撑 20–40 秒（[13]压到23–31秒才揭）④前 3 秒绝不露品牌 logo/口号。</div>
+
+  <div class="grid cols2" style="margin-top:26px">
+    <div class="card">
+      <h3>五种高效泪点装置</h3>
+      <div style="font-size:13.5px;line-height:1.9">
+        <p><b>① 信物物归原主</b>：开头出现→中段送出→结尾长大受益者原样递回，压在命运凭证上。[13]钢笔→录取通知书；[09]花露水→自家阳台；[07]蓝盒子。</p>
+        <p><b>② 首尾同机位/同台词闭环</b>：[09]"你们不养我养"原声回放；[13]同一扇门口三次穿越；[05]首尾同一辆大巴。</p>
+        <p><b>③ 金句由"做事的人"轻描淡写说</b>：越重的话越平静。[12]"只要娃儿能读书，我不在乎记不记得到我""我这辈子就没白活"。</p>
+        <p><b>④ 真实素材"跌落"</b>：结尾 15–24 秒切真实照片/新闻，把"感人故事"升级为"真实事迹"。[01][04][12]。</p>
+        <p><b>⑤ 以物结情/空镜留白</b>：不拍大哭，拍空椅子、遗物、一扇门、蝴蝶。[06]空竹椅与婚礼蝴蝶。</p>
+      </div>
+    </div>
+    <div class="card">
+      <h3>品牌植入四法（按无痕程度）</h3>
+      <div style="font-size:13.5px;line-height:1.9">
+        <p><b>1. 道具化·零口播（最高明）</b> [09]六神花露水在 3 个情绪节点自然出现，全程不喊品牌名，"手在做事时商品顺便入画"。评论："广告就应该做成这样啊。"</p>
+        <p><b>2. 情感计量单位化</b> [07]蓝盒子床垫装着爷爷 23 年等待，商品即主题。"全程没一句硬广，却记住了蓝盒子"。</p>
+        <p><b>3. 双向闭环化</b> [10]商品出现两次方向相反：A 买给 B→B 买给 A，随爱的方向反转。</p>
+        <p><b>4. 语义反转+情节化</b> [08]海尔作为"旧抱怨在新世界被满足"的最后一环，可带功能口播，但必须嵌在对照结构里。</p>
+      </div>
+      <div class="kv" style="margin-top:8px;font-size:12.5px"><b>红线：</b>商品必须与情感同构；绑定弱+口播硬=低转发 [10][02]；品牌名压到中后段，前 3 秒不露；最高标准=评论区无视广告只讨论情感。</div>
+    </div>
+  </div>
+</div></section>
+
+<!-- ======================= 情绪曲线 ======================= -->
+<section id="emotion"><div class="wrap">
+  <div class="sec-head"><span class="no">07</span><h2>情绪曲线与节奏公式</h2><span class="en">EMOTION CURVE · 内联 SVG</span></div>
+  <p class="lead">压着走 → 假高潮 → 至暗静默 → 真爆发 → 落版。真爆发稳定落在 85%–95%（最后 20–40 秒），[10] 为二次反转特例。</p>
+
+  <div class="chart">
+    <h3>通用情绪曲线（纵轴情绪强度 1–10，横轴时长 %）</h3>
+    <svg viewBox="0 0 820 380" style="width:100%;height:auto;display:block">
+      <!-- 网格 -->
+      <g font-family="monospace" font-size="11" fill="#7a6f5c">
+        <line x1="60" y1="40" x2="780" y2="40" stroke="#e0d6c2" stroke-dasharray="3"/>
+        <line x1="60" y1="120" x2="780" y2="120" stroke="#e0d6c2" stroke-dasharray="3"/>
+        <line x1="60" y1="200" x2="780" y2="200" stroke="#e0d6c2" stroke-dasharray="3"/>
+        <line x1="60" y1="280" x2="780" y2="280" stroke="#e0d6c2" stroke-dasharray="3"/>
+        <line x1="60" y1="330" x2="780" y2="330" stroke="#1a1612" stroke-width="1.5"/>
+        <text x="30" y="44">10</text><text x="36" y="124">8</text><text x="36" y="204">5</text><text x="36" y="284">2</text><text x="40" y="334">1</text>
+        <text x="55" y="352">0%</text><text x="190" y="352">20%</text><text x="330" y="352">40%</text><text x="470" y="352">60%</text><text x="610" y="352">80%</text><text x="700" y="352">95%</text><text x="760" y="352">100%</text>
+      </g>
+      <!-- 区间底色 -->
+      <rect x="60" y="40" width="420" height="290" fill="#f0e6d2" opacity="0.5"/>
+      <text x="200" y="250" font-size="12" fill="#9a8a6a">低压铺垫区 0–60%（强度2–4 · BGM -18dB以下）</text>
+      <rect x="560" y="40" width="60" height="290" fill="#dfe6ec" opacity="0.7"/>
+      <text x="566" y="300" font-size="11" fill="#5b7a99" transform="rotate(-90 575 300)">至暗静默 75–85%</text>
+      <!-- 曲线 -->
+      <path d="M60,266 C200,250 380,235 480,233 C510,200 520,160 529,153 C555,160 590,260 620,314 C650,300 675,120 690,56 C720,80 745,120 760,137"
+            fill="none" stroke="#c8893a" stroke-width="3.5" stroke-linecap="round"/>
+      <!-- 关键点 -->
+      <g font-size="12">
+        <circle cx="529" cy="153" r="6" fill="#c8893a"/><text x="470" y="138" fill="#9a6620" font-weight="bold">假高潮 60–75%（强度6–7）</text>
+        <circle cx="620" cy="314" r="6" fill="#5b7a99"/><text x="560" y="335" fill="#5b7a99" font-weight="bold">至暗静默（0–3 · BGM抽空）</text>
+        <circle cx="690" cy="56" r="7" fill="#a8331f"/><text x="640" y="42" fill="#a8331f" font-weight="bold">真爆发 85–95%（强度9–10）</text>
+        <circle cx="760" cy="137" r="5" fill="#1a1612"/><text x="700" y="125" fill="#1a1612">落版 6–8</text>
+      </g>
+    </svg>
+  </div>
+
+  <div class="chart">
+    <h3>各片"真爆发"位置验证（%）</h3>
+    <p class="desc">除 [10] 二次反转特例外，真爆发稳定落在 85%–95% 区间。</p>
+    <div class="bar-row"><span class="lbl">11 一片苇叶</span><div class="track"><div class="fill" style="width:98%;background:var(--A)"></div></div><span class="val">~98%</span></div>
+    <div class="bar-row"><span class="lbl">08 妈妈选择</span><div class="track"><div class="fill" style="width:93%;background:var(--B)"></div></div><span class="val">~93%</span></div>
+    <div class="bar-row"><span class="lbl">09 心安归宿</span><div class="track"><div class="fill" style="width:93%;background:var(--B)"></div></div><span class="val">~93%</span></div>
+    <div class="bar-row"><span class="lbl">05 一个冬天</span><div class="track"><div class="fill" style="width:91%;background:var(--A)"></div></div><span class="val">~91%</span></div>
+    <div class="bar-row"><span class="lbl">13 守住快递</span><div class="track"><div class="fill" style="width:91%;background:var(--C)"></div></div><span class="val">~91%</span></div>
+    <div class="bar-row"><span class="lbl">01 早餐奶奶</span><div class="track"><div class="fill" style="width:90%;background:var(--S)"></div></div><span class="val">~90%</span></div>
+    <div class="bar-row"><span class="lbl">07 爷爷小屋</span><div class="track"><div class="fill" style="width:90%;background:var(--S)"></div></div><span class="val">~90%</span></div>
+    <div class="bar-row"><span class="lbl">03 拾荒奶奶</span><div class="track"><div class="fill" style="width:89%;background:var(--A)"></div></div><span class="val">~89%</span></div>
+    <div class="bar-row"><span class="lbl">04 寻亲路</span><div class="track"><div class="fill" style="width:88%;background:var(--S)"></div></div><span class="val">~88%</span></div>
+    <div class="bar-row"><span class="lbl">06 爷爷放假</span><div class="track"><div class="fill" style="width:88%;background:var(--A)"></div></div><span class="val">~88%</span></div>
+    <div class="bar-row"><span class="lbl">12 白爷爷</span><div class="track"><div class="fill" style="width:85%;background:var(--C)"></div></div><span class="val">~85%</span></div>
+    <div class="bar-row"><span class="lbl">10 爱不消失</span><div class="track"><div class="fill" style="width:74%;background:#8a6a6a"></div></div><span class="val">74%→二次反转</span></div>
+  </div>
+  <div class="kv"><b>三条节奏纪律：</b>①前 80% 不许提前哭（[06] 葬礼不哭是教科书）②一次只给一个全频段爆点，中间小高潮都被收回 ③最想让观众哭的地方反而抽掉音乐（[10] -31.9dB、[13] -29.3dB、[01] -38dB）。</div>
+</div></section>
+
+<!-- ======================= 分镜视听 ======================= -->
+<section id="audiovisual" style="background:var(--cream2)"><div class="wrap">
+  <div class="sec-head"><span class="no">08</span><h2>分镜与视听设计库</h2><span class="en">AUDIOVISUAL · 冷暖双轨</span></div>
+
+  <h3 style="margin-bottom:6px;font-family:'Songti SC',serif">冷暖双轨色板（13/13 通用）</h3>
+  <div class="swatches">
+    <div class="sw"><div class="box" style="background:radial-gradient(circle at 40% 35%,#f0c878,#c8893a 60%,#8a5a20)"></div><div class="cap"><b>暖黄做旧</b><br>过去 / 被爱 / 家<br>钨丝灯·土坯墙·蒸汽·泛黄颗粒·暗角</div></div>
+    <div class="sw"><div class="box" style="background:linear-gradient(135deg,#c3ced8,#6d8296 70%,#3f5263)"></div><div class="cap"><b>冷蓝灰</b><br>现在 / 疏离 / 现实钩子<br>荧光灯·大理石·清透现代空间</div></div>
+    <div class="sw"><div class="box" style="background:#111;background-image:radial-gradient(circle at 50% 40%,#2a2a2a,#000)"></div><div class="cap"><b>纯黑底 + 毛笔字</b><br>落版专用<br>白 / 金字，与正片彻底切开</div></div>
+    <div class="sw"><div class="box" style="background:linear-gradient(135deg,#ddd,#bbb);filter:saturate(.2)"></div><div class="cap"><b>真实素材原色</b><br>不加滤镜<br>与 AI 剧情质感"切开"更可信 [01][04][12]</div></div>
+  </div>
+
+  <div class="grid cols3" style="margin-top:18px">
+    <div class="card">
+      <h3>转场三法</h3>
+      <div style="font-size:13px;line-height:1.9">
+        <p><b>白闪 + whoosh</b>：进/出回忆、真实素材，可逐级加码 [12] 三次白闪加重</p>
+        <p><b>硬切 + 标签卡</b>：「年份」「X岁时」「春夏秋冬」卡，零成本 AI 友好 [05][09][11][13]</p>
+        <p><b>叠化 / 匹配剪辑</b>：同动作同道具同机位跨年代，表现"重复几十年" [12][13][07]</p>
+        <p style="color:var(--muted)">高级替代 [13]：不用年份卡，靠色调从暖黄+暗角切到清透+暗角消失，零字幕交代"十几年过去了"。</p>
+      </div>
+    </div>
+    <div class="card">
+      <h3>字幕 5 层（剪辑层，不占 AI）</h3>
+      <div style="font-size:13px;line-height:1.9">
+        <p>1. <b>对白层</b>：底部居中白字黑描边</p>
+        <p>2. <b>内心旁白层</b>：左侧暖黄字，加括号 〔我好像就是个累赘〕</p>
+        <p>3. <b>时间标签层</b>：「2011年」「半岁时」「冬」</p>
+        <p>4. <b>新闻资料层</b>：真实素材底部多行小字（生卒/数字/出处）</p>
+        <p>5. <b>落版层</b>：黑底居中毛笔手写字</p>
+      </div>
+    </div>
+    <div class="card">
+      <h3>BGM 三段式电平示意</h3>
+      <div style="font-size:12.5px;line-height:1.8">
+        <div style="display:flex;align-items:center;gap:8px;margin:6px 0"><span style="width:110px">低压铺底 0–60%</span><div style="flex:1;height:14px;background:#e0d6c2;border-radius:3px"><div style="width:30%;height:100%;background:#c8a96a;border-radius:3px"></div></div><span style="font-family:monospace">-18~-22dB</span></div>
+        <div style="display:flex;align-items:center;gap:8px;margin:6px 0"><span style="width:110px">假高潮即收 60–80%</span><div style="flex:1;height:14px;background:#e0d6c2;border-radius:3px"><div style="width:70%;height:100%;background:#c8893a;border-radius:3px"></div></div><span style="font-family:monospace">-16dB</span></div>
+        <div style="display:flex;align-items:center;gap:8px;margin:6px 0"><span style="width:110px">至暗静默</span><div style="flex:1;height:14px;background:#e0d6c2;border-radius:3px"><div style="width:4%;height:100%;background:#5b7a99;border-radius:3px"></div></div><span style="font-family:monospace">-29~-38dB</span></div>
+        <div style="display:flex;align-items:center;gap:8px;margin:6px 0"><span style="width:110px">全频铺满 末10–15%</span><div style="flex:1;height:14px;background:#e0d6c2;border-radius:3px"><div style="width:100%;height:100%;background:#a8331f;border-radius:3px"></div></div><span style="font-family:monospace">-8~-13dB</span></div>
+        <p style="margin-top:6px;color:var(--muted)">OST 人声是高级引爆器 [06][09][10] 结尾副歌进入；音效节奏化 [13] 撕胶带声成鼓点。</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="grid cols2" style="margin-top:18px">
+    <div class="card">
+      <h3>关键意象 / 道具库（闭环三拍）</h3>
+      <div class="tbl-scroll"><table style="min-width:420px">
+        <colgroup><col style="width:24%"><col style="width:40%"><col style="width:36%"></colgroup>
+        <tr><th class="l">类别</th><th class="l">意象（案例）</th><th class="l">象征 / 闭环</th></tr>
+        <tr><td class="l">食物</td><td class="l">包子[01]·溏心蛋[09]·粽子[11]·馒头[12]·糖[06]</td><td class="l">贫瘠里具象的爱</td></tr>
+        <tr><td class="l">交通/行走</td><td class="l">三轮车[12]·扁担[01]·大巴[05]</td><td class="l">负重、离别与归来</td></tr>
+        <tr><td class="l">家居卧具(品牌富矿)</td><td class="l">沙发[03]·蓝盒子[07]·洗衣机[08]·花露水[09]·床垫[10]</td><td class="l">家、归属、被尊重、被疼的物证</td></tr>
+        <tr><td class="l">信物</td><td class="l">星星画[03]·蝴蝶[06]·钢笔[13]·寻人启事[10]·假包裹[13]</td><td class="l">承诺、命运凭证</td></tr>
+        <tr><td class="l">旧物/凭证</td><td class="l">零钱·录取通知书·奖状·黑白照片·搪瓷缸·算盘</td><td class="l">年代质感、成长节点</td></tr>
+      </table></div>
+      <p style="font-size:12.5px;margin-top:8px;color:var(--muted)">闭环三拍：①开头作日常物件出现一次 → ②中段关键情节点被传递 → ③结尾物归原主 / 升格为精神符号。</p>
+    </div>
+    <div class="card">
+      <h3>金句句式库（可直接套写）</h3>
+      <div style="font-size:13.5px;line-height:2.1">
+        <p>· 条件判断式：<code>有____在的地方，才是____</code> <span class="src-num">[09]</span></p>
+        <p>· 不求回报式：<code>只要____能____，我不在乎____</code> <span class="src-num">[12]</span></p>
+        <p>· 铠甲式（最适合截图）：<code>那些被____过的____，终会变成____</code> <span class="src-num">[13]</span></p>
+        <p>· 否定翻转式：<code>____不是____，而是____</code> <span class="src-num">[08]</span></p>
+        <p>· 称谓思念式：<code>____，我又想你了 / 这一次换我____你</code> <span class="src-num">[06][07]</span></p>
+        <p>· 数字誓言式：<code>五毛钱的包子，我卖了二十七年不涨价</code> <span class="src-num">[01]</span></p>
+      </div>
+      <div class="kv" style="margin-top:8px;font-size:12.5px">双声部标配：<b>画面=客观剧情（方言对白）+ 声音=第一人称回忆旁白（成年"我"，温软普通话）</b>。金句交给"做事的人"用方言轻描淡写说，旁白不替他喊。</div>
+    </div>
+  </div>
+</div></section>
+
+<!-- ======================= AI 适配 ======================= -->
+<section id="ai"><div class="wrap">
+  <div class="sec-head"><span class="no">09</span><h2>AI 制作适配性与提示词模板</h2><span class="en">AI READY</span></div>
+
+  <div class="grid cols2" style="margin-bottom:20px">
+    <div class="card" style="border-top:4px solid var(--B)">
+      <h3 style="color:var(--B)">✅ 可放心交给 AI（多用、给特写、给足时长）</h3>
+      <div style="font-size:13.5px;line-height:2">
+        <p>· 静物 / 道具特写：食物、旧物、信物、光影、蒸汽、雨滴</p>
+        <p>· <b>手部动作</b>：包粽子、写字、封箱胶带、递物、做饭、数零钱、抚平纸张 [11][13] 最稳</p>
+        <p>· 单一空间固定机位：老屋、门卫室、宿舍、病房、小饭馆、客厅</p>
+        <p>· 老人面部特写、慢节奏对话、第一人称旁白驱动</p>
+        <p>· 氛围与调色：冷暖色调、暗角、颗粒、逆光、丁达尔光（可后期统一）</p>
+        <p>· 一切剪辑层元素：标签卡、多层字幕、毛笔落版、BGM、真实资料（不占生成额度）</p>
+      </div>
+    </div>
+    <div class="card" style="border-top:4px solid var(--S)">
+      <h3 style="color:var(--S)">⚠️ 穿帮高危（用特写/剪辑/虚焦/后期绕过）</h3>
+      <div class="tbl-scroll"><table style="min-width:380px">
+        <colgroup><col style="width:34%"><col style="width:66%"></colgroup>
+        <tr><th class="l">高危类型</th><th class="l">绕过方案</th></tr>
+        <tr><td class="l">多人全景/群像</td><td class="l">单人/手部特写+快切+环境人声暗示人群 [05][11][12][13]</td></tr>
+        <tr><td class="l">大幅肢体动作</td><td class="l">拆成"起势特写+反应镜头+结果镜头" [12][10]</td></tr>
+        <tr><td class="l">婴幼儿/低龄儿童/动物</td><td class="l">襁褓局部、小手、背影、声音替代 [03][05][09][08]</td></tr>
+        <tr><td class="l">水面/雨夜湿滑/反光</td><td class="l">雨打窗、湿发、滴水特写替代大面积水面 [10]</td></tr>
+        <tr><td class="l"><b>画面内文字（证书/启事/招牌）</b></td><td class="l">一律虚焦，或生成无字画面后期 PS 真字 [13]乱码</td></tr>
+        <tr><td class="l">跨年龄人物一致性</td><td class="l">固定角色参考图/LoRA；分年龄"选角"，用同一信物/痣/发型串联 [09]</td></tr>
+        <tr><td class="l">方言口型同步</td><td class="l">旁白驱动，正脸少说长台词；台词用侧脸/背影/特写遮口型</td></tr>
+        <tr><td class="l">真实新闻/照片/名人肖像</td><td class="l"><b>不用 AI 生成</b>，直接用真实资料（核对版权），这是信任锚点 [01][04][12]</td></tr>
+      </table></div>
+    </div>
+  </div>
+
+  <h3 style="margin-bottom:10px;font-family:'Songti SC',serif">七字段镜头提示词母版（每镜填一份）</h3>
+  <pre class="code">【镜头编号/景别】S__ / 特写·近景·中景
+① 画面质感：写实纪实电影感 / 胶片颗粒 / 浅景深，30fps，画面比例 16:9（竖屏改 9:16）
+② 色调光影：【暖黄做旧=过去/被爱 或 冷蓝灰=现在/疏离】，（侧逆光/丁达尔光/暗角/蒸汽）
+③ 空间与场景：【年代】【地域】的【具体单一空间，如土坯老屋灶台/门卫室/宿舍】，（关键陈设）
+④ 人物与氛围：【人物：年龄/身份/衣着/手部特征】，正在【小动作】，神态【克制/温柔/沉默】
+⑤ 镜头语言：固定机位 / 缓慢推近 / 手部特写俯拍45°，浅景深，（无运镜/白闪/硬切）
+⑥ 时代背景与声音约束：【年代】【地域】【方言】对白；环境声【蝉鸣/碗筷/撕胶带…】；
+            BGM【钢琴单音，-20dB以下】；本镜【无台词 / 台词见⑦】
+⑦ 画面（含台词/字幕）：【具体画面动作】；底部对白"……"；左侧旁白〔……〕；左上标签「____年/X岁」</pre>
+
+  <details class="card" style="margin-bottom:10px"><summary style="cursor:pointer;font-weight:600;color:var(--amber-d)">模板① 手部信物特写 · 善意起点（AI 最稳，每片必备）</summary>
+<pre class="code">① 写实纪实电影感，浅景深，手部毛孔与【信物材质】纹理清晰，30fps
+② 暖黄做旧，侧逆光勾勒手部轮廓，（蒸汽/灰尘/微光）
+③ 【年代】【地域】的【土墙边/灶台/门卫室/老屋方桌】，背景虚化
+④ 【苍老/粗糙/带薄茧的手】，缓慢郑重地【递出/包扎/书写/抚平】【信物：馒头/钱/钢笔/粽子/包裹】
+⑤ 手部特写固定或缓推，俯拍45°，浅景深，无运镜
+⑥ 【地域】方言，环境【蝉鸣/微风/纸张摩擦】，钢琴单音 -20dB
+⑦ 特写手把【信物】递向画面外；对白"【方言短句，如：吃吧/你要好好读书哦】"</pre></details>
+
+  <details class="card" style="margin-bottom:10px"><summary style="cursor:pointer;font-weight:600;color:var(--amber-d)">模板② 冷暖双轨 · 标签卡时间跳转（零成本表现年代流逝）</summary>
+<pre class="code">① 写实电影感；前半【暖黄颗粒+暗角】，后半【冷蓝灰/清透无暗角】
+② 同一机位、同一动作、同一【信物】，仅色调与人物年龄变化
+③ 【同一空间，如学校门口/老屋堂屋/方桌】，陈设随年代微调
+④ 【人物】在【早年】做【动作】→ 硬切 → 同一构图下【人物老去】重复同一动作
+⑤ 固定同机位匹配剪辑；硬切；左上角叠「【年份】」/「【X岁】时」标签
+⑥ 白闪 whoosh（仅进/出回忆用）；环境声随年代切换；BGM 由钢琴单音渐入弦乐
+⑦ 标签卡依次「【1989】→【1995】→【2000】」；旁白〔这一____，就是____年〕
+<span class="c"># 高级替代：不用标签，仅靠暖黄+暗角 → 清透+暗角消失表时间（见[13]）</span></pre></details>
+
+  <details class="card" style="margin-bottom:10px"><summary style="cursor:pointer;font-weight:600;color:var(--amber-d)">模板③ 重逢 · 信物物归原主（总爆发镜头）</summary>
+<pre class="code">① 现实写实质感，清透（与回忆暖黄切开），浅景深
+② 门推开逆光 / 柔和自然光，色调回暖
+③ 【现在年代】同一扇门/同一张桌（与模板②同空间闭环）
+④ 【长大的受益者】逆光站定，双手把当年那件【信物】递回【老去的施予者】；
+   再举起【命运凭证：录取通知书/奖状/工资单/钥匙】
+⑤ 中景门推开 → 特写双手交接（信物轻响被放大）→ 中近景举凭证，慢推
+⑥ 门轴"吱呀"作时间跳转信号；弦乐/OST副歌全频段铺满（-12dB）
+⑦ 对白"这【信物】是你送给我的""我用它考上大学/成家了"；
+   闪回童年1–2帧暖黄画面；落版金句"那些被____过的____，终会变成____"</pre></details>
+
+  <details class="card" style="margin-bottom:10px"><summary style="cursor:pointer;font-weight:600;color:var(--amber-d)">模板④ 真实素材 + 毛笔字落版（信任锚点，不用 AI 生成影像）</summary>
+<pre class="code">① 真实纪实照片/新闻截图/采访影像，颗粒粗糙，原色不加滤镜，与AI剧情质感切开
+② 真实暖调，不调色
+③ 【真实人物照片、感谢信、名册、新闻版面、老视频】快切蒙太奇（约12个切点，15–24秒）
+④ 【真实主人公】历史影像，庄重克制
+⑤ 资料快切；底部多行小字逐行交代生平
+⑥ BGM 减弱让位真实环境声/采访同期声（真实感优先，不靠音乐煽情）
+⑦ 底部小字"【姓名】，【生卒年】，【籍贯】，【关键数字，如资助300多名学生】"；
+   最后黑屏白色毛笔"【2–4字称号】"渐显，静默2秒</pre></details>
+
+  <details class="card"><summary style="cursor:pointer;font-weight:600;color:var(--amber-d)">模板⑤ 品牌商品道具化植入（无痕，3 个情绪节点各出现一次）</summary>
+<pre class="code">① 写实生活流，浅景深
+② 暖黄/通透暖调（商品只在"被爱/家"的暖时空出现）
+③ 【日常生活动作场景：擦身/铺床/洗衣/收拾家】
+④ 【人物】的手在做关爱动作时，【商品】"顺便入画"，不给海报式硬特写、不喊品牌名
+⑤ 手部/中景固定，商品处于画面边缘或动作路径上
+⑥ 环境生活声；BGM 压在对白下
+⑦ 三次出现：A 童年被照顾【长辈用商品照顾我】→ B 青春期思念【商品在我身边】
+   → C 成年报恩【我把商品摆进自己家/回赠长辈】；品牌名仅落版/话题标签出现
+<span class="c"># 双向闭环变体：第一次 A 买给 B，第二次 B 买给 A（见[10]）</span></pre></details>
+</div></section>
+
+<!-- ======================= 剧本生成器 ======================= -->
+<section id="generator" style="background:var(--cream2)"><div class="wrap">
+  <div class="sec-head"><span class="no">10</span><h2>一键填空剧本生成器</h2><span class="en">SCRIPT GENERATOR</span></div>
+  <p class="lead">复制整块，把所有【】填空，即可产出一条符合本配方的短片蓝图。建议让 AI 基于此模板一次生成"选题→标题→节拍表→分镜提示词"。</p>
+
+  <h3 style="margin-bottom:8px;font-family:'Songti SC',serif">10.1 立项卡</h3>
+  <pre class="code">· 一句话故事：一个【地域+年代】的【底层身份，如卖早餐的奶奶/蹬三轮的爷爷/山村门卫】，
+  用【数字】年重复一个【具体利他小动作，如5毛包子不涨价/蹬三轮助学/写假快递】，
+  最终【一次重逢/物归原主/被懂得/真实事迹被看见】。
+· 真实/虚构：【真实人物（附可考来源） / 真实事件改编 / 虚构】
+· 品牌（若有）：【品牌+品类】，它与情感的同构点是【商品=____的物证】（如花露水=被疼的味道）
+· 人物原型四要素：身份之低=____；重复的小动作=____；不求回报的证据=____；与"我"的恩情=____
+· 情感内核（选1）：【亏欠报恩/被偏爱/迟来的懂得/善意重量与时代辜负/物在人去/守护尊严】
+· 公共议题钩子（选1，拉高评论率）：【留守/打拐/养老/支教/婚姻/城乡/非遗传承/助农】
+· 核心信物：【一个小而具体、能拍特写、能首尾闭环的物件】
+· 反常识数字：【一个违背直觉、可考证的数字，如"27年不涨价""寻亲第16年""4179万"】
+· 方言/发生地：【必须一致】，方言=____，故事地=____
+· 时长目标：【__秒，建议215–274】；镜头数≈【时长/9】</pre>
+
+  <h3 style="margin:14px 0 8px;font-family:'Songti SC',serif">10.2 标题（按 T1–T4 各写一版后选定）</h3>
+  <pre class="code">T1 数字坚持句：一份____，他/她____了____年！
+T2 小物件大命运：一____，____起了____
+T3 否定翻转句：____不是____，只是____
+T4 称谓金句：  有____在的地方，才是____
+落版 2–4 字：【____】；可截图金句："那些被____过的____，终会变成____"</pre>
+
+  <h3 style="margin:14px 0 8px;font-family:'Songti SC',serif">10.3 七拍剧本骨架（逐拍填，含时间码与电平）</h3>
+  <pre class="code">拍1 钩子(0–5%)：画面【手部/物件特写·冷调】；旁白/台词"【反常识数字 或 强冲突台词】"；
+                留下的信息缺口=____；BGM【钢琴单音，-20dB】
+拍2 立弱者(5–25%)：主角处境=【被弃/留守/贫穷/丧偶/被误解】；至暗画面=____；台词/旁白"____"
+拍3 善意建立(20–30%)：那个"递/接/留/养"的动作=____；信物第一次出现；金句伏笔="____"
+拍4 蒙太奇升级(30–70%)：标签卡【年份/年龄/季节序列】=____；动作重复；旁人质疑台词"图啥？"；
+                主角轻描淡写回应"____"；插入一次小成功=____
+拍5 假高潮(60–80%)：温情/小团圆画面=____，音乐涌起(-16dB)；立刻被【离别/死亡/失败】压回；
+                至暗静默点(-30dB左右)=____（最酸处不配乐）
+拍6 真爆发(85–95%)：重逢/物归原主/语义反转=____；信物闭环动作=____；
+                （真实人物片在此切15–24s真实资料）；OST副歌全频铺满(-12dB)；金句="____"
+拍7 落版(最后5–10%)：毛笔字"【称号】"；真实佐证小字（生卒/数字）=____；品牌话题标签=____</pre>
+
+  <div class="grid cols2" style="margin-top:20px">
+    <div class="card">
+      <h3>交付前自检清单（不过不发）· 数据与事实</h3>
+      <ul class="chk">
+        <li>真实人物：姓名、生卒年、籍贯、方言、关键数字全部可考且前后口径一致（防 [12] 方言、[01][04] 数字争议）</li>
+        <li>虚构剧情：核心冲突的情感逻辑能用真实高赞评论/亲历者访谈佐证（防 [09][11] 前提被反驳）</li>
+        <li>反常识数字出现且可被观众接受（宁用区间不编精确值）</li>
+      </ul>
+      <h3 style="margin-top:14px">结构与情绪</h3>
+      <ul class="chk">
+        <li>前 3 秒有钩（数字/冲突/悬念/反常四选一），且不露品牌</li>
+        <li>信息缺口能撑 20–40 秒；前 80% 没有提前"哭出来"</li>
+        <li>有且只有一次全频段真爆发，落在 85%–95%；中间假高潮被收回</li>
+        <li>最酸处有一次"音乐抽空"的静默</li>
+        <li>信物首尾闭环；首尾有同机位/同台词/同物件呼应</li>
+        <li>有一句可单独截图转发的金句 + 2–4 字毛笔字落版</li>
+        <li>真实人物片结尾有 15–24 秒真实资料（信任锚点）</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>传播设计</h3>
+      <ul class="chk">
+        <li>能回答"观众会想转发给哪个具体的人"</li>
+        <li>私人故事里嵌了一个有公共讨论度的议题</li>
+        <li>埋了一句可被二创/接梗的"梗句"</li>
+      </ul>
+      <h3 style="margin-top:14px">品牌（若有）</h3>
+      <ul class="chk">
+        <li>商品与情感同构，作为信物/计量单位出现，而非插播口播</li>
+        <li>品牌名/促销压到中后段或最后 20 秒；商品至少在 2–3 个情绪节点自然出现</li>
+      </ul>
+      <h3 style="margin-top:14px">AI 制作</h3>
+      <ul class="chk">
+        <li>无正面生成的多人全景/大幅动作/婴幼儿/水面/群像，均已用特写+剪辑替代</li>
+        <li>画面内文字（证书/启事/招牌）已虚焦或后期 PS 真字，无乱码</li>
+        <li>跨年龄主角有统一形象锚定（参考图/固定特征/信物）</li>
+        <li>字幕 3–5 层齐全；BGM 三段式电平 + OST/静默点位已在时间线标注</li>
+        <li>真实新闻/照片未用 AI 生成，已核对版权与署名</li>
+      </ul>
+    </div>
+  </div>
+</div></section>
+
+<!-- ======================= 13 案例速查卡 ======================= -->
+<section id="cases"><div class="wrap">
+  <div class="sec-head"><span class="no">11</span><h2>附录 A：13 案例速查卡</h2><span class="en">CASE CARDS · 写片时找同款照拆</span></div>
+  <div class="grid cols3 cases">
+    <div class="card S"><h3><span class="tag S">S 01</span>一份怜爱，她坚持了二十多年！</h3><p style="color:var(--muted)">非品牌·真人毛师花｜244s｜1842万赞</p><p><b>选题：</b>摆摊奶奶 5 毛包子 27 年不涨价。环形报恩+真实影像。</p><p><b>钩子/泪点：</b>"20多年前5毛的包子如今还是5毛"+手揭蒸笼；结尾约20s真实新闻。</p><p><b>意象/金句：</b>包子、扁担、零钱。"这包子没掺别的，就掺了良心"（约78.6万赞二创）。</p><p class="reuse">复用：反常识数字钩子 + 真实素材跌落 + "良心"梗句</p></div>
+
+    <div class="card B"><h3><span class="tag B">B 02</span>岁月偷走了青春，偷不走心中的热爱</h3><p style="color:var(--muted)">伊利欣活｜177s｜94.6万，转发率仅1.69%</p><p><b>选题：</b>80 岁爷爷想上春晚，被降格为"小区春晚也算"。追梦顺叙+降格反转。</p><p><b>钩子/泪点：</b>练歌/梦想；无强泪点，温馨收尾。</p><p><b>意象：</b>话筒、舞台、奶粉（弱植入不违和）。</p><p class="reuse">复用（反面教材）：制作精良但无痛感/不指向具体他人→转发垫底</p></div>
+
+    <div class="card A"><h3><span class="tag A">A 03</span>她靠捡来的琐碎，拼凑出一个宝贝的我</h3><p style="color:var(--muted)">芝华仕沙发｜231s｜192万，转发率15.66%</p><p><b>选题：</b>拾荒奶奶捡弃婴供成销冠，接进城前离世。环形报恩+双伏笔。</p><p><b>钩子/泪点：</b>"你是垃圾桶里捡来的"；沙发揭晓+星星闪回+真实弃婴数据。</p><p><b>意象/金句：</b>废品、星星画、沙发。"拾荒的手拼凑出宝贝的我"。</p><p class="reuse">复用：道德悬念钩子+双伏笔回收+商品做"家"的符号｜雷区：吴语配内蒙古</p></div>
+
+    <div class="card S"><h3><span class="tag S">S 04</span>他们的寻亲路花了几十年</h3><p style="color:var(--muted)">公益·真人｜215s｜885万，转发138万</p><p><b>选题：</b>打拐寻亲群体几十年寻子。环形+群体蒙太奇+真实寻亲新闻。</p><p><b>钩子/泪点：</b>几十年寻亲数字+真实影像；团圆+"团圆"毛笔字。</p><p><b>意象：</b>寻人启事、紧握的手、团圆饭。评论区变"寻亲互助现场"。</p><p class="reuse">复用：群体主角+公共议题（打拐）拉评论转发+真实新闻闭环；数字口径统一</p></div>
+
+    <div class="card A"><h3><span class="tag A">A 05</span>她用一个冬天补回缺席时光</h3><p style="color:var(--muted)">非品牌｜235s｜119万，收藏率12.58%最高</p><p><b>选题：</b>外婆用一个冬天陪伴补回留守童年。单线顺叙·四季环形。</p><p><b>钩子/泪点：</b>"外婆你怎么才来，再不走就来不及了"；首尾同一辆大巴离别+4179万留守数据。</p><p><b>意象：</b>春夏秋冬卡、大巴、灶台、书包。</p><p class="reuse">复用：季节标签卡做时间流+首尾同物闭环+用宏观真实数据收尾议题</p></div>
+
+    <div class="card A"><h3><span class="tag A">A 06</span>爷爷马上要放假了我又想你了</h3><p style="color:var(--muted)">非品牌｜274s｜478万，转发率27.6%全场第一</p><p><b>选题：</b>爷爷攒糖/卖牛供读书，离世，孙子在婚礼思念。单线顺叙·一镜到底。</p><p><b>钩子/泪点：</b>孩子口吻直接引语；葬礼全程不哭，婚礼一只蝴蝶+OST《如果声音不记得》总爆发。</p><p><b>意象/金句：</b>糖、牛、空竹椅、蝴蝶。"放什么照片啊"（约34万赞）。</p><p class="reuse">复用：以喜写悲、葬礼不哭的克制+空镜/蝴蝶结情+一首OST副歌引爆</p></div>
+
+    <div class="card S"><h3><span class="tag S">S 07</span>最暖的归栖是爷爷在的小屋</h3><p style="color:var(--muted)">蓝盒子床垫｜238s｜513万，品牌片天花板</p><p><b>选题：</b>爷爷打零工用一张蓝盒子床垫等孙女回家，大团圆。环形报恩·团圆。</p><p><b>钩子/泪点：</b>床垫从"被嘲笑"到长大才懂，蓝盒子揭晓+团圆。</p><p><b>评论：</b>"全程没一句硬广，却记住了蓝盒子""34岁还有爷爷等他回家"。</p><p class="reuse">复用：商品=爱的时间容器；在一片悲情里做"观众求而不得的稀缺团圆"</p></div>
+
+    <div class="card B"><h3><span class="tag B">B 08</span>妈妈的选择不是抛弃，只是救赎了自己</h3><p style="color:var(--muted)">海尔×京东｜199s｜76万</p><p><b>选题：</b>母亲忍到儿子高考后离婚，儿子在妈妈新家看懂她的自我救赎。三幕语义反转。</p><p><b>钩子/泪点：</b>递通知书+"我要跟你爸离婚"（喜事塞噩耗）；旧家抱怨在新家逐一被满足。</p><p><b>意象：</b>洗衣机（=被尊重的物理证明）、绿植。落版"选择"。</p><p class="reuse">复用：同一句抱怨/同一物件前后语义反转；商品可带口播但须嵌在对照结构里</p></div>
+
+    <div class="card B"><h3><span class="tag B">B 09</span>有奶奶在的地方，才是心安的归宿</h3><p style="color:var(--muted)">六神×京东｜183s｜97万，品牌片情感最强</p><p><b>选题：</b>奶奶"你们不养我养"接盘留守孙女30年。单线顺叙·9张年龄卡。</p><p><b>钩子/泪点：</b>"你们不养我养"；slogan落版+开头台词原声回放（-12.1dB）。</p><p><b>意象：</b>六神花露水（被疼30年的物证，三次出现零口播）、溏心蛋。落版"归宿"。</p><p class="reuse">复用：商品道具化3节点零口播+年龄标签卡+首尾台词闭环；评论区成"奶奶带大倾诉场"</p></div>
+
+    <div class="card B"><h3><span class="tag B">B 10</span>幸好，爱不会因为时间消失</h3><p style="color:var(--muted)">金橡树床垫·一言saya｜297s/17镜｜50万，赞评比127最高</p><p><b>选题：</b>母亲寻女16年重逢，床垫母买给女→女买给母双向闭环。环形+产品双向反转+二次反转。</p><p><b>钩子/泪点：</b>抚平寻人启事+"找女儿第16年"；医院守夜峰值→噩梦-31.9dB静默→女儿抱床垫反转。</p><p><b>意象：</b>寻人启事、乳胶床垫（双向）、粉上衣。落版"回家"。</p><p class="reuse">复用：商品双向闭环+峰值后再砸静默的二次反转；教训：绑定弱+过缓压低转发</p></div>
+
+    <div class="card C"><h3><span class="tag C">C 11</span>一片苇叶，包起了我的人生，也包起了整个家乡的希望</h3><p style="color:var(--muted)">京东千县名品｜239s｜43.5万</p><p><b>选题：</b>丧夫寡妇包粽起家、带全村致富，"被笑→翻身"。环形报恩·七幕。</p><p><b>钩子/泪点：</b>教室提问女儿说粽子被笑"好土"+沉默妈妈背影；同一教室翻身+18县快剪（压到最后20秒）。</p><p><b>意象：</b>苇叶/粽子、空米缸、大铁锅。落版"名品出千县，风味敬山河！"。</p><p class="reuse">复用：现代提问+被笑钩子、同一空间翻身闭环、品牌压到最后20秒｜雷区：前提被亲历者反驳</p></div>
+
+    <div class="card C"><h3><span class="tag C">C 12</span>一辆三轮车，驼着无数孩子的未来</h3><p style="color:var(--muted)">非品牌·真人白方礼｜153s｜43万，评论率5.12%</p><p><b>选题：</b>白方礼蹬三轮、啃半个馒头，捐资助学300余孩子。环形报恩+24s真实资料。</p><p><b>钩子/泪点：</b>"捐款不留一分钱，一天啃半个馒头"；握手"我这辈子就没白活"+真实资料+毛笔"白爷爷"。</p><p><b>意象：</b>三轮车、馒头、钱、彩电。评论核心：落选《感动中国》集体意难平。</p><p class="reuse">复用：数字砸脸钩子+真实资料+书法落版｜最大教训：四川话配天津/沧州原型被群嘲</p></div>
+
+    <div class="card C"><h3><span class="tag C">C 13</span>他守住的不止是那份快递，还守住了留守孩子们的期待</h3><p style="color:var(--muted)">非品牌｜154s｜40.7万，评论率6.39%最高</p><p><b>选题：</b>山村门卫十几年自费给留守儿童写"假快递"，孩子用钢笔考学回来报恩。单线顺叙·八幕。</p><p><b>钩子/泪点：</b>手写"广东寄"+旁人"你在骗娃娃"、主角"不骗不行啊"；钢笔物归原主压录取通知书。</p><p><b>金句：</b>"那些被温柔守护过的童年，终会变成长大后对抗世界的铠甲。"</p><p class="reuse">复用：道德瑕疵钩子+信物物归原主+不靠年份卡的色调时间法+可截图金句｜雷区：证书文字乱码需后期PS</p></div>
+  </div>
+</div></section>
+
+<!-- ======================= 雷区 ======================= -->
+<section id="pit" style="background:var(--cream)"><div class="wrap">
+  <div class="pit">
+    <div class="sec-head" style="border-color:rgba(255,154,134,.4)"><span class="no">12</span><h2>⚠ 必须避开的雷区（全部来自真实差评）</h2></div>
+    <p style="color:#c9a99a;margin-bottom:16px">一条总原则：<b style="color:#ff9a86">真实故事拼"考证"，虚构故事拼"共情逻辑"</b>——前者错一个方言/数字就被拆穿，后者错一个情感前提就被亲历者否定。</p>
+    <div class="tbl-scroll"><table>
+      <colgroup><col style="width:20%"><col style="width:42%"><col style="width:38%"></colgroup>
+      <tr><th class="l">雷区</th><th class="l">案例与差评原文/事实</th><th class="l">规避方法</th></tr>
+      <tr><td class="l"><b>方言与发生地不符</b></td><td class="l">[12] 白方礼天津/沧州人却配四川话，被群嘲"怎么搞四川口音"；[03] 吴语配内蒙古被质疑</td><td class="l">真实人物先考证籍贯，方言严格匹配；拿不准就用带轻微口音的普通话</td></tr>
+      <tr><td class="l"><b>数字/事实口径错误</b></td><td class="l">[01] 评论考据"当年是两毛不是五毛"；[04] 片尾 436 万 vs 正文 419.9 万被指矛盾</td><td class="l">反常识数字要可考、前后口径统一；宁用区间也不编精确值</td></tr>
+      <tr><td class="l"><b>剧情前提经不起亲历者检验</b></td><td class="l">[11]"同学会嘲笑粽子土"被反驳"根本没人嫌土特产"；[09]"奶奶带大不会想父母"被指硬造</td><td class="l">虚构冲突的情感逻辑找亲历者访谈/高赞评论验证，不臆造</td></tr>
+      <tr><td class="l"><b>价值观争议/主角不讨喜</b></td><td class="l">[08] 儿子不共情母亲引发"白眼狼"争议（虽带来讨论，但削弱好感）</td><td class="l">让主角的误解可被理解、转变有铺垫，避免显得冷漠无情</td></tr>
+      <tr><td class="l"><b>商品与情感割裂/硬广</b></td><td class="l">绑定弱+口播硬会拉低转发（[10][02] 转发率垫底）</td><td class="l">商品与情感同构、道具化、压后出现</td></tr>
+      <tr><td class="l"><b>广告溢价/消费质疑</b></td><td class="l">[11] 被指"靠感人故事给粽子升值""十几块吃不起"</td><td class="l">助农/带货片让"人/乡土"先行，价格信息克制</td></tr>
+      <tr><td class="l"><b>AI 穿帮/文字乱码</b></td><td class="l">[13] AI 生成录取书出现"大洎併科技大学"乱码</td><td class="l">证书/招牌/启事文字一律虚焦或后期 PS 真字</td></tr>
+    </table></div>
+  </div>
+</div></section>
+
+<footer>
+  <b>爆款情感短片 · 可复用创作元素手册</b>　｜　基于编号 01–13 真实拉片归纳　｜　本页面为单文件自包含 HTML，可离线双击打开<br>
+  全部事实、数据、台词、镜头与评论均照录拉片原文，未虚构。开新片以"一键填空剧本生成器"为入口。
+</footer>
+
+<script>
+// 自检清单 checkbox 纯静态可点击切换
+document.querySelectorAll('.chk li').forEach(function(li){
+  li.style.cursor='pointer';
+  li.addEventListener('click',function(){li.classList.toggle('on');});
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,139 @@
+{
+  "scene": "../../参考图/早点摊2003年基准图.png",
+  "output_prefix": "../../参考图/第二场_V8人偶基准图_开场借火_20261104_v2",
+  "supersample": 2,
+  "foreground_mask": "前景遮挡_开场.png",
+  "people": [
+    {
+      "id": "boy",
+      "name": "男孩｜青绿",
+      "color": "#54b9ac",
+      "foot": [
+        0.534,
+        0.43
+      ],
+      "height_ratio": 0.23,
+      "pose": "place",
+      "seated": true,
+      "facing": "right",
+      "head_yaw_degrees": -100,
+      "label": "坐小桌远侧；下肢被遮挡",
+      "label_xy": [
+        0.52,
+        0.12
+      ],
+      "occlusion_mask": "小桌遮挡_男孩.png"
+    },
+    {
+      "id": "father",
+      "name": "父亲｜蓝色",
+      "color": "#537fc0",
+      "foot": [
+        0.592,
+        0.47
+      ],
+      "height_ratio": 0.34,
+      "pose": "place",
+      "seated": true,
+      "facing": "left",
+      "head_yaw_degrees": -150,
+      "label": "坐小桌旁；看向孩子",
+      "label_xy": [
+        0.625,
+        0.23
+      ]
+    },
+    {
+      "id": "xiong",
+      "name": "熊庚香｜金黄",
+      "color": "#d5a33b",
+      "foot": [
+        0.51,
+        0.62
+      ],
+      "height_ratio": 0.44,
+      "pose": "place",
+      "facing": "left",
+      "head_yaw_degrees": -150,
+      "label": "案台外侧，稍后方待手",
+      "label_xy": [
+        0.35,
+        0.12
+      ],
+      "arms": [
+        [
+          [
+            -0.13,
+            0.13,
+            1.38
+          ],
+          [
+            -0.3,
+            0.16,
+            1.18
+          ],
+          [
+            -0.41,
+            0.2,
+            0.91
+          ]
+        ],
+        [
+          [
+            0.12,
+            -0.13,
+            1.38
+          ],
+          [
+            -0.02,
+            -0.12,
+            1.1
+          ],
+          [
+            -0.28,
+            -0.1,
+            0.94
+          ]
+        ]
+      ]
+    },
+    {
+      "id": "wan",
+      "name": "万佐成｜赭红",
+      "color": "#b85f49",
+      "foot": [
+        0.49,
+        0.875
+      ],
+      "height_ratio": 0.65,
+      "pose": "stand",
+      "facing": "right",
+      "head_yaw_degrees": -160,
+      "label": "待借炉位通道侧；面向母亲",
+      "label_xy": [
+        0.29,
+        0.275
+      ]
+    },
+    {
+      "id": "mother",
+      "name": "母亲｜紫色",
+      "color": "#a076ba",
+      "foot": [
+        0.638,
+        0.83
+      ],
+      "height_ratio": 0.61,
+      "pose": "talk",
+      "facing": "left",
+      "head_yaw_degrees": -170,
+      "bag": true,
+      "label": "万的画右侧，提菜开口借火",
+      "label_xy": [
+        0.69,
+        0.32
+      ]
+    }
+  ],
+  "notes": "S05开场站位，人物均从通道侧操作。父子坐原有小桌；男孩下肢作桌后遮挡示意。保留原场景、空锅与待挪空凳，不作场景状态编辑。"
+}

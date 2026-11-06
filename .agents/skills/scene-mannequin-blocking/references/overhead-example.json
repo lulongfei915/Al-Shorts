@@ -1,0 +1,26 @@
+{
+  "output_prefix": "./output/overhead-example",
+  "canvas": [2048, 1536],
+  "supersample": 2,
+  "title": "人物偏俯视站位示意",
+  "subtitle": "示例布局；实际人物与家具位置须根据输入图重新配置",
+  "camera": {"elevation_degrees": 55, "azimuth_degrees": -60},
+  "floor": {"bounds": [-0.18, -0.30, 3.8, 6.8], "tile_size": [0.53, 0.40]},
+  "objects": [
+    {"type": "box", "position": [-0.16, -0.28, 0], "size": [0.12, 7.0, 0.25], "color": "#a59175"},
+    {"type": "box", "position": [3.65, -0.28, 0], "size": [0.10, 7.0, 0.25], "color": "#a59175"},
+    {"type": "stove", "position": [0.42, 1.36, 0], "vessel": "pan"},
+    {"type": "table", "position": [0.02, 1.94, 0], "size": [1.05, 0.90, 0.88]},
+    {"type": "sink", "position": [0.02, 2.95, 0], "size": [1.03, 0.86, 0.85], "color": "#a9a48a"},
+    {"type": "table", "position": [1.50, 4.50, 0], "size": [1.10, 0.78, 0.74]},
+    {"type": "stool", "position": [2.62, 4.70, 0], "size": [0.40, 0.40, 0.46]}
+  ],
+  "people": [
+    {"id": "a", "name": "角色甲｜红色", "color": "#b24b40", "position": [1.15, 1.30, 0], "scale": 0.98, "pose": "stir", "facing": "left", "head_yaw_degrees": -145, "label": "站在炉位通道侧", "label_xy": [0.04, 0.62]},
+    {"id": "b", "name": "角色乙｜蓝色", "color": "#3e7daa", "position": [1.48, 3.40, 0], "scale": 1.0, "pose": "wash", "facing": "left", "head_yaw_degrees": 160, "label": "后方水槽旁清洗", "label_xy": [0.74, 0.40]},
+    {"id": "c", "name": "角色丙｜青绿", "color": "#54b9ac", "position": [2.82, 4.90, 0], "scale": 0.96, "pose": "place", "seated": true, "facing": "left", "head_yaw_degrees": -150, "label": "坐在小桌右侧", "label_xy": [0.74, 0.18]}
+  ],
+  "tools": [{"person": "a", "hand": 0, "target": [0.45, 1.44, 0.85], "radius": 0.012, "bowl": true}],
+  "notes": [{"text": "后方小桌", "target": [2.0, 4.8, 0.75], "label_xy": [0.50, 0.16]}],
+  "footer": "仅用于说明配置结构；不代表某一实际场次的固定布局。"
+}

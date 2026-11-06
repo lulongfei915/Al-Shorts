@@ -1,0 +1,52 @@
+{
+  "scene": "../参考图/厨房基准.png",
+  "output_prefix": "../参考图/场次一调度_人偶配置复用版",
+  "supersample": 2,
+  "people": [
+    {
+      "id": "xiong",
+      "name": "熊庚香",
+      "color": "#b24b40",
+      "foot": [0.3798828125, 0.8298611111],
+      "height_ratio": 0.553125,
+      "pose": "stir",
+      "facing": "left",
+      "label": "前灶通道侧 · 搅粥",
+      "label_xy": [0.30029296875, 0.2274305556]
+    },
+    {
+      "id": "woman",
+      "name": "黑帽女人",
+      "color": "#d3a740",
+      "foot": [0.5439453125, 0.6232638889],
+      "height_ratio": 0.3828125,
+      "pose": "place",
+      "facing": "left",
+      "hat": true,
+      "label": "案台后端外沿 · 放油菜",
+      "label_xy": [0.5869140625, 0.2769097222]
+    },
+    {
+      "id": "wan",
+      "name": "万佐成",
+      "color": "#3e7daa",
+      "foot": [0.57373046875, 0.484375],
+      "height_ratio": 0.2890625,
+      "pose": "wash",
+      "facing": "left",
+      "head_yaw_degrees": 171,
+      "label": "后方水槽边 · 清洗",
+      "label_xy": [0.59765625, 0.1614583333]
+    }
+  ],
+  "tools": [
+    {
+      "person": "xiong",
+      "hand": 0,
+      "target": [0.2509765625, 0.5138888889],
+      "width_px": 4,
+      "color": "#76736a",
+      "bowl": true
+    }
+  ]
+}

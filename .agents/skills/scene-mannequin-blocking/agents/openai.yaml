@@ -1,0 +1,4 @@
+interface:
+  display_name: "场景人偶站位图"
+  short_description: "将场景与站位转换成人偶调度图，支持原图合成和偏俯视空间还原，提供标注版与无字版"
+  default_prompt: "使用 $scene-mannequin-blocking，根据场景图和站位说明生成带人偶的调度图；需要看清后景时制作偏俯视空间示意，保留人物位置与配色，提供标注版、无字版和配置。"

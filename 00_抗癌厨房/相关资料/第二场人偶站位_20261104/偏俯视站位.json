@@ -1,0 +1,83 @@
+{
+  "camera": {
+    "elevation_degrees": 55,
+    "projection": "orthographic"
+  },
+  "people": [
+    {
+      "id": "boy",
+      "name": "男孩",
+      "color": "#54b9ac",
+      "xyz": [
+        1.1,
+        5.93,
+        0.15
+      ],
+      "size": 0.67,
+      "seated": true,
+      "pose": "place",
+      "facing": "left",
+      "head_yaw_degrees": 180,
+      "body_yaw_degrees": 90
+    },
+    {
+      "id": "father",
+      "name": "父亲",
+      "color": "#537fc0",
+      "xyz": [
+        2.05,
+        5.23,
+        0
+      ],
+      "size": 0.97,
+      "seated": true,
+      "pose": "place",
+      "facing": "left",
+      "head_yaw_degrees": -150
+    },
+    {
+      "id": "xiong",
+      "name": "熊庚香",
+      "color": "#d5a33b",
+      "xyz": [
+        1.42,
+        3.44,
+        0
+      ],
+      "size": 0.96,
+      "pose": "place",
+      "facing": "left",
+      "head_yaw_degrees": -150
+    },
+    {
+      "id": "wan",
+      "name": "万佐成",
+      "color": "#b85f49",
+      "xyz": [
+        1.42,
+        1.37,
+        0
+      ],
+      "size": 1.02,
+      "pose": "stand",
+      "facing": "right",
+      "head_yaw_degrees": -160
+    },
+    {
+      "id": "mother",
+      "name": "母亲",
+      "color": "#a076ba",
+      "xyz": [
+        2.48,
+        1.69,
+        0
+      ],
+      "size": 0.96,
+      "pose": "talk",
+      "facing": "left",
+      "head_yaw_degrees": -170,
+      "bag": true
+    }
+  ],
+  "notes": "根据原图作近似三维布局；不作为真实测量。原炉空锅和前景待挪空凳仍在原位。"
+}
