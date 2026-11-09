@@ -1,0 +1,1044 @@
+{
+  "duration": 99.134,
+  "request_id": "2026110716221049742261CCCE7DDE13D1",
+  "status": "completed",
+  "subtitles": [
+    {
+      "end_time": 9.083,
+      "start_time": 7.583,
+      "subtitle_text": "《告别》",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 303,
+        "bottom_right_y": 131,
+        "top_left_x": 94,
+        "top_left_y": 42
+      }
+    },
+    {
+      "end_time": 8.75,
+      "start_time": 8.133,
+      "subtitle_text": "宝宝",
+      "text_label": "Subtitle",
+      "text_location": {
+        "bottom_right_x": 690,
+        "bottom_right_y": 646,
+        "top_left_x": 590,
+        "top_left_y": 590
+      }
+    },
+    {
+      "end_time": 10.933,
+      "start_time": 9.183,
+      "subtitle_text": "幼年",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 215,
+        "bottom_right_y": 123,
+        "top_left_x": 70,
+        "top_left_y": 42
+      }
+    },
+    {
+      "end_time": 13.95,
+      "start_time": 12.066,
+      "subtitle_text": "去吧放学就来接你",
+      "text_label": "Subtitle",
+      "text_location": {
+        "bottom_right_x": 834,
+        "bottom_right_y": 650,
+        "top_left_x": 446,
+        "top_left_y": 586
+      }
+    },
+    {
+      "end_time": 17.6,
+      "start_time": 17.55,
+      "subtitle_text": "<",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 862,
+        "bottom_right_y": 398,
+        "top_left_x": 815,
+        "top_left_y": 355
+      }
+    },
+    {
+      "end_time": 23.766,
+      "start_time": 22.016,
+      "subtitle_text": "少年",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 211,
+        "bottom_right_y": 123,
+        "top_left_x": 70,
+        "top_left_y": 42
+      }
+    },
+    {
+      "end_time": 23.55,
+      "start_time": 22.133,
+      "subtitle_text": "我后天就搬走了",
+      "text_label": "Subtitle",
+      "text_location": {
+        "bottom_right_x": 798,
+        "bottom_right_y": 646,
+        "top_left_x": 478,
+        "top_left_y": 590
+      }
+    },
+    {
+      "end_time": 24.516,
+      "start_time": 23.766,
+      "subtitle_text": "到了打电话",
+      "text_label": "Subtitle",
+      "text_location": {
+        "bottom_right_x": 758,
+        "bottom_right_y": 646,
+        "top_left_x": 522,
+        "top_left_y": 590
+      }
+    },
+    {
+      "end_time": 26.25,
+      "start_time": 24.533,
+      "subtitle_text": "行你保重啊",
+      "text_label": "Subtitle",
+      "text_location": {
+        "bottom_right_x": 770,
+        "bottom_right_y": 646,
+        "top_left_x": 514,
+        "top_left_y": 590
+      }
+    },
+    {
+      "end_time": 27.25,
+      "start_time": 26.599,
+      "subtitle_text": "喂",
+      "text_label": "Subtitle",
+      "text_location": {
+        "bottom_right_x": 667,
+        "bottom_right_y": 647,
+        "top_left_x": 615,
+        "top_left_y": 595
+      }
+    },
+    {
+      "end_time": 28.916,
+      "start_time": 28.133,
+      "subtitle_text": "谢谢",
+      "text_label": "Subtitle",
+      "text_location": {
+        "bottom_right_x": 690,
+        "bottom_right_y": 650,
+        "top_left_x": 594,
+        "top_left_y": 590
+      }
+    },
+    {
+      "end_time": 31.75,
+      "start_time": 30.05,
+      "subtitle_text": "青年",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 215,
+        "bottom_right_y": 123,
+        "top_left_x": 74,
+        "top_left_y": 42
+      }
+    },
+    {
+      "end_time": 30.116,
+      "start_time": 30.1,
+      "subtitle_text": "G3934",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 381,
+        "bottom_right_y": 354,
+        "top_left_x": 284,
+        "top_left_y": 303
+      }
+    },
+    {
+      "end_time": 30.5,
+      "start_time": 30.216,
+      "subtitle_text": "NZ 020",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 935,
+        "bottom_right_y": 313,
+        "top_left_x": 845,
+        "top_left_y": 272
+      }
+    },
+    {
+      "end_time": 30.583,
+      "start_time": 30.216,
+      "subtitle_text": "G3934",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 359,
+        "bottom_right_y": 393,
+        "top_left_x": 260,
+        "top_left_y": 341
+      }
+    },
+    {
+      "end_time": 30.75,
+      "start_time": 30.716,
+      "subtitle_text": "G3934",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 311,
+        "bottom_right_y": 402,
+        "top_left_x": 199,
+        "top_left_y": 349
+      }
+    },
+    {
+      "end_time": 31.616,
+      "start_time": 30.833,
+      "subtitle_text": "别哭",
+      "text_label": "Subtitle",
+      "text_location": {
+        "bottom_right_x": 690,
+        "bottom_right_y": 646,
+        "top_left_x": 590,
+        "top_left_y": 590
+      }
+    },
+    {
+      "end_time": 31,
+      "start_time": 30.966,
+      "subtitle_text": "G393",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 192,
+        "bottom_right_y": 419,
+        "top_left_x": 101,
+        "top_left_y": 362
+      }
+    },
+    {
+      "end_time": 31.5,
+      "start_time": 31.466,
+      "subtitle_text": "5",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 186,
+        "bottom_right_y": 162,
+        "top_left_x": 149,
+        "top_left_y": 119
+      }
+    },
+    {
+      "end_time": 31.733,
+      "start_time": 31.666,
+      "subtitle_text": "5",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 222,
+        "bottom_right_y": 154,
+        "top_left_x": 183,
+        "top_left_y": 99
+      }
+    },
+    {
+      "end_time": 34,
+      "start_time": 31.766,
+      "subtitle_text": "XWZ...G3934",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 251,
+        "bottom_right_y": 442,
+        "top_left_x": 0,
+        "top_left_y": 338
+      }
+    },
+    {
+      "end_time": 34,
+      "start_time": 33.966,
+      "subtitle_text": "WZ.G3934",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 293,
+        "bottom_right_y": 457,
+        "top_left_x": 68,
+        "top_left_y": 386
+      }
+    },
+    {
+      "end_time": 31.833,
+      "start_time": 31.8,
+      "subtitle_text": "339",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 74,
+        "bottom_right_y": 447,
+        "top_left_x": 0,
+        "top_left_y": 385
+      }
+    },
+    {
+      "end_time": 32.166,
+      "start_time": 32.133,
+      "subtitle_text": "白",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 1285,
+        "bottom_right_y": 298,
+        "top_left_x": 1251,
+        "top_left_y": 243
+      }
+    },
+    {
+      "end_time": 32.166,
+      "start_time": 32.133,
+      "subtitle_text": "日",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 1285,
+        "bottom_right_y": 334,
+        "top_left_x": 1243,
+        "top_left_y": 287
+      }
+    },
+    {
+      "end_time": 32.25,
+      "start_time": 32.216,
+      "subtitle_text": "F",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 1285,
+        "bottom_right_y": 338,
+        "top_left_x": 1255,
+        "top_left_y": 291
+      }
+    },
+    {
+      "end_time": 33.35,
+      "start_time": 32.566,
+      "subtitle_text": "等我",
+      "text_label": "Subtitle",
+      "text_location": {
+        "bottom_right_x": 690,
+        "bottom_right_y": 650,
+        "top_left_x": 594,
+        "top_left_y": 590
+      }
+    },
+    {
+      "end_time": 32.866,
+      "start_time": 32.833,
+      "subtitle_text": "5",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 446,
+        "bottom_right_y": 126,
+        "top_left_x": 411,
+        "top_left_y": 87
+      }
+    },
+    {
+      "end_time": 33.116,
+      "start_time": 33.05,
+      "subtitle_text": "5",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 458,
+        "bottom_right_y": 126,
+        "top_left_x": 423,
+        "top_left_y": 83
+      }
+    },
+    {
+      "end_time": 33.583,
+      "start_time": 33.55,
+      "subtitle_text": "5",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 398,
+        "bottom_right_y": 138,
+        "top_left_x": 359,
+        "top_left_y": 95
+      }
+    },
+    {
+      "end_time": 33.916,
+      "start_time": 33.716,
+      "subtitle_text": "5",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 386,
+        "bottom_right_y": 162,
+        "top_left_x": 347,
+        "top_left_y": 115
+      }
+    },
+    {
+      "end_time": 34.183,
+      "start_time": 34.016,
+      "subtitle_text": "G3934",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 379,
+        "bottom_right_y": 434,
+        "top_left_x": 251,
+        "top_left_y": 374
+      }
+    },
+    {
+      "end_time": 34.283,
+      "start_time": 34.1,
+      "subtitle_text": "5",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 526,
+        "bottom_right_y": 174,
+        "top_left_x": 491,
+        "top_left_y": 131
+      }
+    },
+    {
+      "end_time": 34.5,
+      "start_time": 34.5,
+      "subtitle_text": "5",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 594,
+        "bottom_right_y": 142,
+        "top_left_x": 563,
+        "top_left_y": 103
+      }
+    },
+    {
+      "end_time": 36.216,
+      "start_time": 34.633,
+      "subtitle_text": "NZ C",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 1229,
+        "bottom_right_y": 314,
+        "top_left_x": 1124,
+        "top_left_y": 262
+      }
+    },
+    {
+      "end_time": 34.916,
+      "start_time": 34.916,
+      "subtitle_text": "5",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 634,
+        "bottom_right_y": 122,
+        "top_left_x": 599,
+        "top_left_y": 79
+      }
+    },
+    {
+      "end_time": 35.25,
+      "start_time": 35.25,
+      "subtitle_text": "5",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 646,
+        "bottom_right_y": 130,
+        "top_left_x": 615,
+        "top_left_y": 83
+      }
+    },
+    {
+      "end_time": 36.366,
+      "start_time": 35.266,
+      "subtitle_text": "3934",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 622,
+        "bottom_right_y": 405,
+        "top_left_x": 431,
+        "top_left_y": 334
+      }
+    },
+    {
+      "end_time": 35.616,
+      "start_time": 35.416,
+      "subtitle_text": "5",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 672,
+        "bottom_right_y": 143,
+        "top_left_x": 628,
+        "top_left_y": 87
+      }
+    },
+    {
+      "end_time": 35.683,
+      "start_time": 35.6,
+      "subtitle_text": "旋等车",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 622,
+        "bottom_right_y": 382,
+        "top_left_x": 544,
+        "top_left_y": 336
+      }
+    },
+    {
+      "end_time": 35.7,
+      "start_time": 35.7,
+      "subtitle_text": "13934",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 542,
+        "bottom_right_y": 398,
+        "top_left_x": 435,
+        "top_left_y": 351
+      }
+    },
+    {
+      "end_time": 35.833,
+      "start_time": 35.766,
+      "subtitle_text": "5",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 704,
+        "bottom_right_y": 149,
+        "top_left_x": 662,
+        "top_left_y": 97
+      }
+    },
+    {
+      "end_time": 38.083,
+      "start_time": 35.8,
+      "subtitle_text": "旅等车",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 706,
+        "bottom_right_y": 426,
+        "top_left_x": 604,
+        "top_left_y": 368
+      }
+    },
+    {
+      "end_time": 36.083,
+      "start_time": 36.05,
+      "subtitle_text": "5",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 730,
+        "bottom_right_y": 142,
+        "top_left_x": 695,
+        "top_left_y": 99
+      }
+    },
+    {
+      "end_time": 37.016,
+      "start_time": 36.383,
+      "subtitle_text": "G3934",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 596,
+        "bottom_right_y": 422,
+        "top_left_x": 465,
+        "top_left_y": 364
+      }
+    },
+    {
+      "end_time": 36.516,
+      "start_time": 36.45,
+      "subtitle_text": "5",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 766,
+        "bottom_right_y": 138,
+        "top_left_x": 727,
+        "top_left_y": 91
+      }
+    },
+    {
+      "end_time": 36.866,
+      "start_time": 36.65,
+      "subtitle_text": "5",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 782,
+        "bottom_right_y": 142,
+        "top_left_x": 739,
+        "top_left_y": 87
+      }
+    },
+    {
+      "end_time": 36.85,
+      "start_time": 36.85,
+      "subtitle_text": "CHANG ACHAN",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 713,
+        "bottom_right_y": 425,
+        "top_left_x": 611,
+        "top_left_y": 399
+      }
+    },
+    {
+      "end_time": 37.233,
+      "start_time": 36.95,
+      "subtitle_text": "3934",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 619,
+        "bottom_right_y": 419,
+        "top_left_x": 489,
+        "top_left_y": 365
+      }
+    },
+    {
+      "end_time": 37.033,
+      "start_time": 37.033,
+      "subtitle_text": "5",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 810,
+        "bottom_right_y": 118,
+        "top_left_x": 775,
+        "top_left_y": 83
+      }
+    },
+    {
+      "end_time": 37.033,
+      "start_time": 37.033,
+      "subtitle_text": "A",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 721,
+        "bottom_right_y": 417,
+        "top_left_x": 699,
+        "top_left_y": 395
+      }
+    },
+    {
+      "end_time": 37.533,
+      "start_time": 37.116,
+      "subtitle_text": "DHANG ACHAN",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 746,
+        "bottom_right_y": 414,
+        "top_left_x": 639,
+        "top_left_y": 379
+      }
+    },
+    {
+      "end_time": 37.2,
+      "start_time": 37.15,
+      "subtitle_text": "5",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 826,
+        "bottom_right_y": 126,
+        "top_left_x": 787,
+        "top_left_y": 75
+      }
+    },
+    {
+      "end_time": 37.566,
+      "start_time": 37.25,
+      "subtitle_text": "34",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 634,
+        "bottom_right_y": 406,
+        "top_left_x": 531,
+        "top_left_y": 359
+      }
+    },
+    {
+      "end_time": 37.6,
+      "start_time": 37.3,
+      "subtitle_text": "5",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 842,
+        "bottom_right_y": 122,
+        "top_left_x": 803,
+        "top_left_y": 75
+      }
+    },
+    {
+      "end_time": 37.566,
+      "start_time": 37.566,
+      "subtitle_text": "4%",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 769,
+        "bottom_right_y": 413,
+        "top_left_x": 743,
+        "top_left_y": 391
+      }
+    },
+    {
+      "end_time": 37.6,
+      "start_time": 37.6,
+      "subtitle_text": "D",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 701,
+        "bottom_right_y": 417,
+        "top_left_x": 675,
+        "top_left_y": 391
+      }
+    },
+    {
+      "end_time": 37.733,
+      "start_time": 37.733,
+      "subtitle_text": "5",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 906,
+        "bottom_right_y": 150,
+        "top_left_x": 871,
+        "top_left_y": 103
+      }
+    },
+    {
+      "end_time": 38.166,
+      "start_time": 38.1,
+      "subtitle_text": "西白",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 951,
+        "bottom_right_y": 63,
+        "top_left_x": 859,
+        "top_left_y": 1
+      }
+    },
+    {
+      "end_time": 40.166,
+      "start_time": 40.1,
+      "subtitle_text": "1",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 34,
+        "bottom_right_y": 534,
+        "top_left_x": 0,
+        "top_left_y": 475
+      }
+    },
+    {
+      "end_time": 40.366,
+      "start_time": 40.266,
+      "subtitle_text": "1",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 46,
+        "bottom_right_y": 538,
+        "top_left_x": 0,
+        "top_left_y": 479
+      }
+    },
+    {
+      "end_time": 40.45,
+      "start_time": 40.383,
+      "subtitle_text": "21",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 114,
+        "bottom_right_y": 529,
+        "top_left_x": 0,
+        "top_left_y": 459
+      }
+    },
+    {
+      "end_time": 43.766,
+      "start_time": 42.05,
+      "subtitle_text": "中年",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 215,
+        "bottom_right_y": 127,
+        "top_left_x": 67,
+        "top_left_y": 27
+      }
+    },
+    {
+      "end_time": 48.716,
+      "start_time": 47.066,
+      "subtitle_text": "爸我来了",
+      "text_label": "Subtitle",
+      "text_location": {
+        "bottom_right_x": 746,
+        "bottom_right_y": 650,
+        "top_left_x": 538,
+        "top_left_y": 590
+      }
+    },
+    {
+      "end_time": 55.15,
+      "start_time": 53.35,
+      "subtitle_text": "壮年",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 215,
+        "bottom_right_y": 123,
+        "top_left_x": 70,
+        "top_left_y": 42
+      }
+    },
+    {
+      "end_time": 55.35,
+      "start_time": 54.566,
+      "subtitle_text": "要下雨了",
+      "text_label": "Subtitle",
+      "text_location": {
+        "bottom_right_x": 730,
+        "bottom_right_y": 646,
+        "top_left_x": 546,
+        "top_left_y": 590
+      }
+    },
+    {
+      "end_time": 56.35,
+      "start_time": 55.366,
+      "subtitle_text": "伞你拿着",
+      "text_label": "Subtitle",
+      "text_location": {
+        "bottom_right_x": 734,
+        "bottom_right_y": 650,
+        "top_left_x": 546,
+        "top_left_y": 586
+      }
+    },
+    {
+      "end_time": 59.483,
+      "start_time": 56.8,
+      "subtitle_text": "<请A032号到3号窗口>",
+      "text_label": "Subtitle",
+      "text_location": {
+        "bottom_right_x": 882,
+        "bottom_right_y": 650,
+        "top_left_x": 398,
+        "top_left_y": 586
+      }
+    },
+    {
+      "end_time": 59.25,
+      "start_time": 59.15,
+      "subtitle_text": "处",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 144,
+        "bottom_right_y": 124,
+        "top_left_x": 0,
+        "top_left_y": 30
+      }
+    },
+    {
+      "end_time": 59.516,
+      "start_time": 59.266,
+      "subtitle_text": "登记处",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 389,
+        "bottom_right_y": 146,
+        "top_left_x": 0,
+        "top_left_y": 20
+      }
+    },
+    {
+      "end_time": 59.633,
+      "start_time": 59.55,
+      "subtitle_text": "牙",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 680,
+        "bottom_right_y": 482,
+        "top_left_x": 597,
+        "top_left_y": 398
+      }
+    },
+    {
+      "end_time": 59.933,
+      "start_time": 59.766,
+      "subtitle_text": "我",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 697,
+        "bottom_right_y": 484,
+        "top_left_x": 592,
+        "top_left_y": 400
+      }
+    },
+    {
+      "end_time": 61.466,
+      "start_time": 61.183,
+      "subtitle_text": "民临政民政证",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 1285,
+        "bottom_right_y": 95,
+        "top_left_x": 982,
+        "top_left_y": 6
+      }
+    },
+    {
+      "end_time": 61.383,
+      "start_time": 61.183,
+      "subtitle_text": "民婚中心",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 623,
+        "bottom_right_y": 268,
+        "top_left_x": 485,
+        "top_left_y": 220
+      }
+    },
+    {
+      "end_time": 61.883,
+      "start_time": 61.4,
+      "subtitle_text": "风中心",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 899,
+        "bottom_right_y": 239,
+        "top_left_x": 710,
+        "top_left_y": 187
+      }
+    },
+    {
+      "end_time": 62.15,
+      "start_time": 61.9,
+      "subtitle_text": "心",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 1230,
+        "bottom_right_y": 255,
+        "top_left_x": 973,
+        "top_left_y": 197
+      }
+    },
+    {
+      "end_time": 66.5,
+      "start_time": 64.466,
+      "subtitle_text": "天冷了,",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 724,
+        "bottom_right_y": 401,
+        "top_left_x": 602,
+        "top_left_y": 317
+      }
+    },
+    {
+      "end_time": 66.483,
+      "start_time": 64.466,
+      "subtitle_text": "记得加衣服",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 772,
+        "bottom_right_y": 447,
+        "top_left_x": 601,
+        "top_left_y": 351
+      }
+    },
+    {
+      "end_time": 64.95,
+      "start_time": 64.95,
+      "subtitle_text": "合了",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 761,
+        "bottom_right_y": 474,
+        "top_left_x": 654,
+        "top_left_y": 374
+      }
+    },
+    {
+      "end_time": 65.016,
+      "start_time": 65,
+      "subtitle_text": "坚得加衣服",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 799,
+        "bottom_right_y": 458,
+        "top_left_x": 662,
+        "top_left_y": 388
+      }
+    },
+    {
+      "end_time": 66.5,
+      "start_time": 66.5,
+      "subtitle_text": "上得加衣",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 752,
+        "bottom_right_y": 453,
+        "top_left_x": 618,
+        "top_left_y": 371
+      }
+    },
+    {
+      "end_time": 69.133,
+      "start_time": 67.35,
+      "subtitle_text": "老年",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 215,
+        "bottom_right_y": 123,
+        "top_left_x": 70,
+        "top_left_y": 42
+      }
+    },
+    {
+      "end_time": 89.916,
+      "start_time": 89.133,
+      "subtitle_text": "宝宝",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 690,
+        "bottom_right_y": 646,
+        "top_left_x": 590,
+        "top_left_y": 590
+      }
+    },
+    {
+      "end_time": 94.783,
+      "start_time": 92.916,
+      "subtitle_text": "导演:@编导李让",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 471,
+        "bottom_right_y": 107,
+        "top_left_x": 74,
+        "top_left_y": 34
+      }
+    },
+    {
+      "end_time": 96.45,
+      "start_time": 94.916,
+      "subtitle_text": "制片:@张镜AIGC",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 479,
+        "bottom_right_y": 111,
+        "top_left_x": 66,
+        "top_left_y": 38
+      }
+    },
+    {
+      "end_time": 98.05,
+      "start_time": 96.55,
+      "subtitle_text": "创作支持:@koko",
+      "text_label": "Others",
+      "text_location": {
+        "bottom_right_x": 470,
+        "bottom_right_y": 106,
+        "top_left_x": 74,
+        "top_left_y": 38
+      }
+    }
+  ],
+  "task_id": "amk-tool-video-ocr-1538123452674",
+  "task_type": "video-ocr",
+  "usage": {
+    "normalized_usage": 0.413042
+  }
+}

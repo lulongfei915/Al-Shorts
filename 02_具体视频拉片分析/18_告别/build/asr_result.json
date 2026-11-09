@@ -1,0 +1,62 @@
+{
+  "duration": 98.128,
+  "request_id": "2026110716221049742261CCCE7DDE13D1",
+  "status": "completed",
+  "subtitles": [
+    {
+      "end_time": 1.34,
+      "start_time": 0.48,
+      "subtitle_text": "啊啊"
+    },
+    {
+      "end_time": 14.1,
+      "start_time": 12.2,
+      "subtitle_text": "去吧放学就来接你"
+    },
+    {
+      "end_time": 23.7,
+      "start_time": 22.52,
+      "subtitle_text": "后天就搬走啊"
+    },
+    {
+      "end_time": 24.72,
+      "start_time": 23.88,
+      "subtitle_text": "忘了打电话"
+    },
+    {
+      "end_time": 27.38,
+      "start_time": 24.72,
+      "subtitle_text": "行你保重啊喂"
+    },
+    {
+      "end_time": 29.04,
+      "start_time": 28.24,
+      "subtitle_text": "谢谢"
+    },
+    {
+      "end_time": 31.76,
+      "start_time": 30.96,
+      "subtitle_text": "别哭"
+    },
+    {
+      "end_time": 33.32,
+      "start_time": 32.52,
+      "subtitle_text": "可我"
+    },
+    {
+      "end_time": 55.56,
+      "start_time": 54.68,
+      "subtitle_text": "要下雨了"
+    },
+    {
+      "end_time": 56.58,
+      "start_time": 55.56,
+      "subtitle_text": "伞你拿着"
+    }
+  ],
+  "task_id": "amk-tool-asr-subtitles-2119747002882",
+  "task_type": "asr-subtitles",
+  "usage": {
+    "normalized_usage": 0.049065
+  }
+}
